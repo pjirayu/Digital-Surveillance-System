@@ -1,0 +1,2066 @@
+<!DOCTYPE html>
+<!-- saved from url=(0131)https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+  <link rel="dns-prefetch" href="https://github.githubassets.com/">
+  <link rel="dns-prefetch" href="https://avatars0.githubusercontent.com/">
+  <link rel="dns-prefetch" href="https://avatars1.githubusercontent.com/">
+  <link rel="dns-prefetch" href="https://avatars2.githubusercontent.com/">
+  <link rel="dns-prefetch" href="https://avatars3.githubusercontent.com/">
+  <link rel="dns-prefetch" href="https://github-cloud.s3.amazonaws.com/">
+  <link rel="dns-prefetch" href="https://user-images.githubusercontent.com/">
+
+
+
+  <link crossorigin="anonymous" media="all" integrity="sha512-2rYmZoKIqVHGi0fW7GJrP+qKbL5ErE1RNyshLtTKkUM9FrjqyVJhth2DBKFda7dk5rKkpyp76lFeZX6K8GJyxg==" rel="stylesheet" href="./GitHub - leoxiaobin_deep-high-resolution-net.pytorch_ The project is an official implementation of our CVPR2019 paper _Deep High-Resolution Representation Learning for Human Pose Estimation__files/frameworks-dab626668288a951c68b.css">
+  <link crossorigin="anonymous" media="all" integrity="sha512-FAi7xqbQQfppKgT+dVH76S0lWoYgmuK/p8k/P62pGQXlKBCOqIEd5boWUkZwlpY2j7TFFI2lb3E14ErtDsAqgw==" rel="stylesheet" href="./GitHub - leoxiaobin_deep-high-resolution-net.pytorch_ The project is an official implementation of our CVPR2019 paper _Deep High-Resolution Representation Learning for Human Pose Estimation__files/site-1408bbc6a6d041fa692a04fe75.css">
+    <link crossorigin="anonymous" media="all" integrity="sha512-HBILZgW5OMGedN0S3mMi049fYgDuNrnwO8cvmx6hY/VCHaJdGx20AfUcAsOPT6S/AH0Xda12tLSCNRKqc46Emg==" rel="stylesheet" href="./GitHub - leoxiaobin_deep-high-resolution-net.pytorch_ The project is an official implementation of our CVPR2019 paper _Deep High-Resolution Representation Learning for Human Pose Estimation__files/github-1c120b6605b938c19e74dd12.css">
+    
+    
+    
+    
+
+  <script crossorigin="anonymous" defer="defer" integrity="sha512-8K2vvwbW+6H27Nad5ydg8PA2/aMD/LKq+EiK9s0U0hhVZxCI2tWBsYk9beAtisRw2j+Or5k2/F+6dk02nmj/PA==" type="application/javascript" src="./GitHub - leoxiaobin_deep-high-resolution-net.pytorch_ The project is an official implementation of our CVPR2019 paper _Deep High-Resolution Representation Learning for Human Pose Estimation__files/environment-f0adafbf.js.download"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-sR3f0kahoeblfszzL150uYKqur19dEEBZeYzKF+a1/qyBjcSruHGsXeE5HDlD6PTe2hyPJtuKXPbylp3lhZOOw==" type="application/javascript" src="./GitHub - leoxiaobin_deep-high-resolution-net.pytorch_ The project is an official implementation of our CVPR2019 paper _Deep High-Resolution Representation Learning for Human Pose Estimation__files/chunk-frameworks-b11ddfd2..download"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-57BXsO8XaL0t9BZAtpvxNYFJHfZNrBwkfSyGeC3exSzN6O8TCruBADgWYbNEL8j3du298LBu6uVHMaO9l0NNIg==" type="application/javascript" src="./GitHub - leoxiaobin_deep-high-resolution-net.pytorch_ The project is an official implementation of our CVPR2019 paper _Deep High-Resolution Representation Learning for Human Pose Estimation__files/chunk-vendor-e7b057b0.js.download"></script>
+  
+  <script crossorigin="anonymous" defer="defer" integrity="sha512-titwOoDVCiTJe9SC8f5DxvOXVv9Z3TLYyN/k43jxBerLKVwJ/V4xR/Q208A0l+tog6MdyX8JHFY+1qfRddwudA==" type="application/javascript" src="./GitHub - leoxiaobin_deep-high-resolution-net.pytorch_ The project is an official implementation of our CVPR2019 paper _Deep High-Resolution Representation Learning for Human Pose Estimation__files/behaviors-b62b703a.js.download"></script>
+  
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-F/8sNCLF603gJL0egQeZwFTYP9dfZAVEWHdjMssZ2opLZXRK08vgowBRzKyra6u9zU/rGVxe+igfJsSWzfO2lg==" type="application/javascript" data-module-id="./chunk-contributions-spider-graph.js" data-src="https://github.githubassets.com/assets/chunk-contributions-spider-graph-17ff2c34.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-obMR8mPKx8OvqRe34LgnUcxeJ1qujiA4ND3H6UX13ExMlA/WfHLjEzXRmgGRcRvN/8J1nzc+Z+jgz/PLTFy6zg==" type="application/javascript" data-module-id="./chunk-drag-drop.js" data-src="https://github.githubassets.com/assets/chunk-drag-drop-a1b311f2.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-nrQUXHpCZwcjRbjr6hKa32vRLemL+gZ80QN2bCyp+57xvm0XjXTiz1YOUbb2N44Y2dveV3WmkBx0wvgs4t61LA==" type="application/javascript" data-module-id="./chunk-jump-to.js" data-src="https://github.githubassets.com/assets/chunk-jump-to-9eb4145c.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-tcH4xCRuMBAh1PruDaiwGnRIbHlF6bGLhxyCQ16uqok1cV5QFMguVPWJtN9KI0jGQOgN+Pha3+uOUXhXdfK/qw==" type="application/javascript" data-module-id="./chunk-profile-pins-element.js" data-src="https://github.githubassets.com/assets/chunk-profile-pins-element-b5c1f8c4.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-gPx3bYhTjyC83X5u5KlEDJpwGAHt3AC2p5s9iMuAfPTeSj7kHlKMW231C3K3c7+jvlpWpELk8DJsefrYdRzqjA==" type="application/javascript" data-module-id="./chunk-randomColor.js" data-src="https://github.githubassets.com/assets/chunk-randomColor-80fc776d.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-E+H+wAtjiqutBvn2cnXzDIvmasIhYiS7i7JzOfFUwo+Ej8zT54OrJtP//RhwixnypgOpCF4JvqzYy6zOtORDmg==" type="application/javascript" data-module-id="./chunk-runner-groups.js" data-src="https://github.githubassets.com/assets/chunk-runner-groups-13e1fec0.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-qdiCkJPPR4LxwUKftEmJe2v79E8xnTceYqylsWkMsGuARkiKkX9iFNwkvZJ3bDfS5YHSPD3+k+N2/I73tvlL1Q==" type="application/javascript" data-module-id="./chunk-sortable-behavior.js" data-src="https://github.githubassets.com/assets/chunk-sortable-behavior-a9d88290.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-NpURjBPyJ0JT8hWOMbLErYNeb0bTkKfmFX1hl1F8C/q6jckqWObeOzEAcs6TRlj+cqAR6GDohEBxDgkYBlx+QQ==" type="application/javascript" data-module-id="./chunk-tweetsodium.js" data-src="https://github.githubassets.com/assets/chunk-tweetsodium-3695118c.js"></script>
+    <script crossorigin="anonymous" defer="defer" integrity="sha512-cEJZ+VgdZDdWnklo2jrp7veZDGa+XAZPkxbgGxeqSoJfiIFqQp2GVMUXQKHWXEmjJKwRd+HYqO1YWFR8bKP5/A==" type="application/javascript" data-module-id="./chunk-user-status-submit.js" data-src="https://github.githubassets.com/assets/chunk-user-status-submit-704259f9.js"></script>
+  
+  <script crossorigin="anonymous" defer="defer" integrity="sha512-4iEIux17YSDPKxmS8ITWA1zfrO2yZyuJ6ELxhHgk8BkytQc/lEfUDAjRztGxGGcScEkb0AO7dYaDRwsaDJHBRQ==" type="application/javascript" src="./GitHub - leoxiaobin_deep-high-resolution-net.pytorch_ The project is an official implementation of our CVPR2019 paper _Deep High-Resolution Representation Learning for Human Pose Estimation__files/repositories-e22108bb.js.download"></script>
+<script crossorigin="anonymous" defer="defer" integrity="sha512-aw5tciVT0IsECUmMuwp9ez60QReE2/yFNL1diLgZnOom6RhU8+0lG3RlAKto4JwbCoEP15E41Pksd7rK5BKfCQ==" type="application/javascript" src="./GitHub - leoxiaobin_deep-high-resolution-net.pytorch_ The project is an official implementation of our CVPR2019 paper _Deep High-Resolution Representation Learning for Human Pose Estimation__files/topic-suggestions-6b0e6d72.download"></script>
+
+  <meta name="viewport" content="width=device-width">
+  
+  <title>GitHub - leoxiaobin/deep-high-resolution-net.pytorch: The project is an official implementation of our CVPR2019 paper "Deep High-Resolution Representation Learning for Human Pose Estimation"</title>
+    <meta name="description" content="The project is an official implementation of our CVPR2019 paper &quot;Deep High-Resolution Representation Learning for Human Pose Estimation&quot; - leoxiaobin/deep-high-resolution-net.pytorch">
+    <link rel="search" type="application/opensearchdescription+xml" href="https://github.com/opensearch.xml" title="GitHub">
+  <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+  <meta property="fb:app_id" content="1401488693436528">
+  <meta name="apple-itunes-app" content="app-id=1477376905">
+    <meta name="twitter:image:src" content="https://avatars2.githubusercontent.com/u/5362509?s=400&amp;v=4"><meta name="twitter:site" content="@github"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="leoxiaobin/deep-high-resolution-net.pytorch"><meta name="twitter:description" content="The project is an official implementation of our CVPR2019 paper &quot;Deep High-Resolution Representation Learning for Human Pose Estimation&quot; - leoxiaobin/deep-high-resolution-net.pytorch">
+    <meta property="og:image" content="https://avatars2.githubusercontent.com/u/5362509?s=400&amp;v=4"><meta property="og:site_name" content="GitHub"><meta property="og:type" content="object"><meta property="og:title" content="leoxiaobin/deep-high-resolution-net.pytorch"><meta property="og:url" content="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch"><meta property="og:description" content="The project is an official implementation of our CVPR2019 paper &quot;Deep High-Resolution Representation Learning for Human Pose Estimation&quot; - leoxiaobin/deep-high-resolution-net.pytorch">
+
+
+
+    
+
+  <link rel="assets" href="https://github.githubassets.com/">
+  
+
+  <meta name="request-id" content="C4F1:4D90:DCBE98:127A5FB:5FC47394" data-pjax-transient="true"><meta name="html-safe-nonce" content="50da8fba997ed3a28e25bc51be05c7670a359e2e06d1e91dbea923ed89700fb2" data-pjax-transient="true"><meta name="visitor-payload" content="eyJyZWZlcnJlciI6Imh0dHBzOi8vbC5mYWNlYm9vay5jb20vIiwicmVxdWVzdF9pZCI6IkM0RjE6NEQ5MDpEQ0JFOTg6MTI3QTVGQjo1RkM0NzM5NCIsInZpc2l0b3JfaWQiOiI4NjczMzYwNjM1MzYxNDc1ODQ0IiwicmVnaW9uX2VkZ2UiOiJhcC1ub3J0aGVhc3QtMSIsInJlZ2lvbl9yZW5kZXIiOiJhcC1ub3J0aGVhc3QtMSJ9" data-pjax-transient="true"><meta name="visitor-hmac" content="97880643f7539f57a4de90762fee619aa36c71095c00e387d6d6d6023e34c55d" data-pjax-transient="true"><meta name="cookie-consent-required" content="false" data-pjax-transient="true">
+
+    <meta name="hovercard-subject-tag" content="repository:172426938" data-pjax-transient="">
+
+
+  <meta name="github-keyboard-shortcuts" content="repository" data-pjax-transient="true">
+
+  
+
+  <meta name="selected-link" value="repo_source" data-pjax-transient="">
+
+    <meta name="google-site-verification" content="c1kuD-K2HIVF635lypcsWPoD4kilo5-jA_wBFyT4uMY">
+  <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+  <meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
+  <meta name="google-site-verification" content="GXs5KoUUkNCoaAZn7wPN-t01Pywp9M3sEjnt_3_ZWPc">
+
+  <meta name="octolytics-host" content="collector.githubapp.com"><meta name="octolytics-app-id" content="github"><meta name="octolytics-event-url" content="https://collector.githubapp.com/github-external/browser_event">
+
+  <meta name="analytics-location" content="/&lt;user-name&gt;/&lt;repo-name&gt;" data-pjax-transient="true">
+
+  
+
+
+
+  <meta name="optimizely-datafile" content="{&quot;version&quot;: &quot;4&quot;, &quot;rollouts&quot;: [], &quot;typedAudiences&quot;: [], &quot;anonymizeIP&quot;: true, &quot;projectId&quot;: &quot;16737760170&quot;, &quot;variables&quot;: [], &quot;featureFlags&quot;: [], &quot;experiments&quot;: [{&quot;status&quot;: &quot;Running&quot;, &quot;audienceIds&quot;: [], &quot;variations&quot;: [{&quot;variables&quot;: [], &quot;id&quot;: &quot;18630402174&quot;, &quot;key&quot;: &quot;launchpad&quot;}, {&quot;variables&quot;: [], &quot;id&quot;: &quot;18866331456&quot;, &quot;key&quot;: &quot;control&quot;}], &quot;id&quot;: &quot;18651193356&quot;, &quot;key&quot;: &quot;_features_redesign_rollout&quot;, &quot;layerId&quot;: &quot;18645992876&quot;, &quot;trafficAllocation&quot;: [{&quot;entityId&quot;: &quot;18630402174&quot;, &quot;endOfRange&quot;: 500}, {&quot;entityId&quot;: &quot;18866331456&quot;, &quot;endOfRange&quot;: 1000}, {&quot;entityId&quot;: &quot;18630402174&quot;, &quot;endOfRange&quot;: 5000}, {&quot;entityId&quot;: &quot;18630402174&quot;, &quot;endOfRange&quot;: 5500}, {&quot;entityId&quot;: &quot;18866331456&quot;, &quot;endOfRange&quot;: 10000}], &quot;forcedVariations&quot;: {&quot;143327983.1601483920&quot;: &quot;launchpad&quot;, &quot;1955030087.1562868941&quot;: &quot;launchpad&quot;, &quot;1983887325.1550021416&quot;: &quot;launchpad&quot;, &quot;1947530619.1600461583&quot;: &quot;launchpad&quot;}}, {&quot;status&quot;: &quot;Running&quot;, &quot;audienceIds&quot;: [], &quot;variations&quot;: [{&quot;variables&quot;: [], &quot;id&quot;: &quot;19136700362&quot;, &quot;key&quot;: &quot;show_plans&quot;}, {&quot;variables&quot;: [], &quot;id&quot;: &quot;19157700511&quot;, &quot;key&quot;: &quot;control&quot;}], &quot;id&quot;: &quot;19062314978&quot;, &quot;key&quot;: &quot;account_billing_plans&quot;, &quot;layerId&quot;: &quot;19068014945&quot;, &quot;trafficAllocation&quot;: [{&quot;entityId&quot;: &quot;19136700362&quot;, &quot;endOfRange&quot;: 5000}, {&quot;entityId&quot;: &quot;19157700511&quot;, &quot;endOfRange&quot;: 10000}], &quot;forcedVariations&quot;: {&quot;1238720267648ea2c88a74b410aa3c5c&quot;: &quot;show_plans&quot;, &quot;c4abf59d1620c671458b2a74df2a2410&quot;: &quot;control&quot;}}], &quot;audiences&quot;: [{&quot;conditions&quot;: &quot;[\&quot;or\&quot;, {\&quot;match\&quot;: \&quot;exact\&quot;, \&quot;name\&quot;: \&quot;$opt_dummy_attribute\&quot;, \&quot;type\&quot;: \&quot;custom_attribute\&quot;, \&quot;value\&quot;: \&quot;$opt_dummy_value\&quot;}]&quot;, &quot;id&quot;: &quot;$opt_dummy_audience&quot;, &quot;name&quot;: &quot;Optimizely-Generated Audience for Backwards Compatibility&quot;}], &quot;groups&quot;: [], &quot;attributes&quot;: [{&quot;id&quot;: &quot;16822470375&quot;, &quot;key&quot;: &quot;user_id&quot;}, {&quot;id&quot;: &quot;17143601254&quot;, &quot;key&quot;: &quot;spammy&quot;}, {&quot;id&quot;: &quot;18175660309&quot;, &quot;key&quot;: &quot;organization_plan&quot;}, {&quot;id&quot;: &quot;18813001570&quot;, &quot;key&quot;: &quot;is_logged_in&quot;}, {&quot;id&quot;: &quot;19073851829&quot;, &quot;key&quot;: &quot;geo&quot;}], &quot;botFiltering&quot;: false, &quot;accountId&quot;: &quot;16737760170&quot;, &quot;events&quot;: [{&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;17911811441&quot;, &quot;key&quot;: &quot;hydro_click.dashboard.teacher_toolbox_cta&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18124116703&quot;, &quot;key&quot;: &quot;submit.organizations.complete_sign_up&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18145892387&quot;, &quot;key&quot;: &quot;no_metric.tracked_outside_of_optimizely&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18178755568&quot;, &quot;key&quot;: &quot;click.org_onboarding_checklist.add_repo&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18180553241&quot;, &quot;key&quot;: &quot;submit.repository_imports.create&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18186103728&quot;, &quot;key&quot;: &quot;click.help.learn_more_about_repository_creation&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18188530140&quot;, &quot;key&quot;: &quot;test_event.do_not_use_in_production&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18191963644&quot;, &quot;key&quot;: &quot;click.empty_org_repo_cta.transfer_repository&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18195612788&quot;, &quot;key&quot;: &quot;click.empty_org_repo_cta.import_repository&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18210945499&quot;, &quot;key&quot;: &quot;click.org_onboarding_checklist.invite_members&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18211063248&quot;, &quot;key&quot;: &quot;click.empty_org_repo_cta.create_repository&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18215721889&quot;, &quot;key&quot;: &quot;click.org_onboarding_checklist.update_profile&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18224360785&quot;, &quot;key&quot;: &quot;click.org_onboarding_checklist.dismiss&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18234832286&quot;, &quot;key&quot;: &quot;submit.organization_activation.complete&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18252392383&quot;, &quot;key&quot;: &quot;submit.org_repository.create&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18257551537&quot;, &quot;key&quot;: &quot;submit.org_member_invitation.create&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18259522260&quot;, &quot;key&quot;: &quot;submit.organization_profile.update&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18564603625&quot;, &quot;key&quot;: &quot;view.classroom_select_organization&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18568612016&quot;, &quot;key&quot;: &quot;click.classroom_sign_in_click&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18572592540&quot;, &quot;key&quot;: &quot;view.classroom_name&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18574203855&quot;, &quot;key&quot;: &quot;click.classroom_create_organization&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18582053415&quot;, &quot;key&quot;: &quot;click.classroom_select_organization&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18589463420&quot;, &quot;key&quot;: &quot;click.classroom_create_classroom&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18591323364&quot;, &quot;key&quot;: &quot;click.classroom_create_first_classroom&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18591652321&quot;, &quot;key&quot;: &quot;click.classroom_grant_access&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18607131425&quot;, &quot;key&quot;: &quot;view.classroom_creation&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;18831680583&quot;, &quot;key&quot;: &quot;upgrade_account_plan&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;19064064515&quot;, &quot;key&quot;: &quot;click.signup&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;19075373687&quot;, &quot;key&quot;: &quot;click.view_account_billing_page&quot;}, {&quot;experimentIds&quot;: [], &quot;id&quot;: &quot;19077355841&quot;, &quot;key&quot;: &quot;click.dismiss_signup_prompt&quot;}, {&quot;experimentIds&quot;: [&quot;19062314978&quot;], &quot;id&quot;: &quot;19079713938&quot;, &quot;key&quot;: &quot;click.contact_sales&quot;}, {&quot;experimentIds&quot;: [&quot;19062314978&quot;], &quot;id&quot;: &quot;19120963070&quot;, &quot;key&quot;: &quot;click.compare_account_plans&quot;}, {&quot;experimentIds&quot;: [&quot;19062314978&quot;], &quot;id&quot;: &quot;19151690317&quot;, &quot;key&quot;: &quot;click.upgrade_account_cta&quot;}], &quot;revision&quot;: &quot;338&quot;}">
+  <!-- To prevent page flashing, the optimizely JS needs to be loaded in the
+    <head> tag before the DOM renders -->
+  <script crossorigin="anonymous" defer="defer" integrity="sha512-VJrqSK702Mzl9EQxm2OvFxKaumGptgVdeJS2rsaLvVlOdR4HEu3ZFjtV83kMKdYRelUnxxaAFw0wthkpdEUafw==" type="application/javascript" src="./GitHub - leoxiaobin_deep-high-resolution-net.pytorch_ The project is an official implementation of our CVPR2019 paper _Deep High-Resolution Representation Learning for Human Pose Estimation__files/optimizely-549aea48.js.download"></script>
+
+
+
+  
+
+      <meta name="hostname" content="github.com">
+    <meta name="user-login" content="">
+
+
+      <meta name="expected-hostname" content="github.com">
+
+
+    <meta name="enabled-features" content="MARKETPLACE_PENDING_INSTALLATIONS">
+
+  <meta http-equiv="x-pjax-version" content="2e8f71f42810547327b61d588a3a343a43cfff382213dc6ed94d44854f0d23c0">
+  
+
+        <link href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/commits/master.atom" rel="alternate" title="Recent Commits to deep-high-resolution-net.pytorch:master" type="application/atom+xml">
+
+  <meta name="go-import" content="github.com/leoxiaobin/deep-high-resolution-net.pytorch git https://github.com/leoxiaobin/deep-high-resolution-net.pytorch.git">
+
+  <meta name="octolytics-dimension-user_id" content="5362509"><meta name="octolytics-dimension-user_login" content="leoxiaobin"><meta name="octolytics-dimension-repository_id" content="172426938"><meta name="octolytics-dimension-repository_nwo" content="leoxiaobin/deep-high-resolution-net.pytorch"><meta name="octolytics-dimension-repository_public" content="true"><meta name="octolytics-dimension-repository_is_fork" content="false"><meta name="octolytics-dimension-repository_network_root_id" content="172426938"><meta name="octolytics-dimension-repository_network_root_nwo" content="leoxiaobin/deep-high-resolution-net.pytorch"><meta name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" content="false">
+
+
+    <link rel="canonical" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch" data-pjax-transient="">
+
+
+  <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+
+  <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+
+  <meta name="browser-optimizely-client-errors-url" content="https://api.github.com/_private/browser/optimizely_client/errors">
+
+  <link rel="mask-icon" href="https://github.githubassets.com/pinned-octocat.svg" color="#000000">
+  <link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://github.githubassets.com/favicons/favicon-dark.png">
+  <link rel="icon" class="js-site-favicon" type="image/svg+xml" href="https://github.githubassets.com/favicons/favicon-dark.svg">
+
+<meta name="theme-color" content="#1e2327">
+
+
+  <link rel="manifest" href="https://github.com/manifest.json" crossorigin="use-credentials">
+
+  </head>
+
+  <body class="logged-out env-production page-responsive intent-mouse">
+    
+
+    <div class="position-relative js-header-wrapper ">
+      <a href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE#start-of-content" class="px-2 py-4 bg-blue text-white show-on-focus js-skip-to-content">Skip to content</a>
+      <span class="progress-pjax-loader width-full js-pjax-loader-bar Progress position-fixed">
+    <span style="background-color: #79b8ff;width: 0%;" class="Progress-item progress-pjax-loader-bar "></span>
+</span>      
+      
+
+
+            <header class="Header-old header-logged-out js-details-container Details position-relative f4 py-2" role="banner">
+  <div class="container-xl d-lg-flex flex-items-center p-responsive">
+    <div class="d-flex flex-justify-between flex-items-center">
+        <a class="mr-4" href="https://github.com/" aria-label="Homepage" data-ga-click="(Logged out) Header, go to homepage, icon:logo-wordmark">
+          <svg height="32" class="octicon octicon-mark-github text-white" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+        </a>
+
+          <div class="d-lg-none css-truncate css-truncate-target width-fit p-2">
+            
+
+          </div>
+
+        <div class="d-flex flex-items-center">
+              <a href="https://github.com/join?ref_cta=Sign+up&amp;ref_loc=header+logged+out&amp;ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&amp;source=header-repo" class="d-inline-block d-lg-none f5 text-white no-underline border border-gray-dark rounded-2 px-2 py-1 mr-3 mr-sm-5" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;site header&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;originating_url&quot;:&quot;https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="58123bfefb257bf897597f0fd1b02a130f9be58b30517cfb0f07f449cdebb4d6" data-ga-click="Sign up, click to sign up for account, ref_page:/&lt;user-name&gt;/&lt;repo-name&gt;;ref_cta:Sign up;ref_loc:header logged out">
+                Sign&nbsp;up
+              </a>
+
+          <button class="btn-link d-lg-none mt-1 js-details-target" type="button" aria-label="Toggle navigation" aria-expanded="false">
+            <svg height="24" class="octicon octicon-three-bars text-white" viewBox="0 0 16 16" version="1.1" width="24" aria-hidden="true"><path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path></svg>
+          </button>
+        </div>
+    </div>
+
+    <div class="HeaderMenu HeaderMenu--logged-out position-fixed top-0 right-0 bottom-0 height-fit position-lg-relative d-lg-flex flex-justify-between flex-items-center flex-auto">
+      <div class="d-flex d-lg-none flex-justify-end border-bottom bg-gray-light p-3">
+        <button class="btn-link js-details-target" type="button" aria-label="Toggle navigation" aria-expanded="false">
+          <svg height="24" class="octicon octicon-x text-gray" viewBox="0 0 24 24" version="1.1" width="24" aria-hidden="true"><path fill-rule="evenodd" d="M5.72 5.72a.75.75 0 011.06 0L12 10.94l5.22-5.22a.75.75 0 111.06 1.06L13.06 12l5.22 5.22a.75.75 0 11-1.06 1.06L12 13.06l-5.22 5.22a.75.75 0 01-1.06-1.06L10.94 12 5.72 6.78a.75.75 0 010-1.06z"></path></svg>
+        </button>
+      </div>
+
+        <nav class="mt-0 px-3 px-lg-0 mb-5 mb-lg-0" aria-label="Global">
+          <ul class="d-lg-flex list-style-none">
+              <li class="d-block d-lg-flex flex-lg-nowrap flex-lg-items-center border-bottom border-lg-bottom-0 mr-0 mr-lg-3 edge-item-fix position-relative flex-wrap flex-justify-between d-flex flex-items-center ">
+                <details class="HeaderMenu-details details-overlay details-reset width-full">
+                  <summary class="HeaderMenu-summary HeaderMenu-link px-0 py-3 border-0 no-wrap d-block d-lg-inline-block">
+                    Why GitHub?
+                    <svg x="0px" y="0px" viewBox="0 0 14 8" xml:space="preserve" fill="none" class="icon-chevon-down-mktg position-absolute position-lg-relative">
+                      <path d="M1,1l6.2,6L13,1"></path>
+                    </svg>
+                  </summary>
+                  <div class="dropdown-menu flex-auto rounded-1 bg-white px-0 mt-0 pb-4 p-lg-4 position-relative position-lg-absolute left-0 left-lg-n4">
+                    <a href="https://github.com/features" class="py-2 lh-condensed-ultra d-block link-gray-dark no-underline h5 Bump-link--hover" data-ga-click="(Logged out) Header, go to Features">Features <span class="Bump-link-symbol float-right text-normal text-gray-light">→</span></a>
+                    <ul class="list-style-none f5 pb-3">
+                      <li class="edge-item-fix"><a href="https://github.com/features/code-review/" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Code review">Code review</a></li>
+                      <li class="edge-item-fix"><a href="https://github.com/features/project-management/" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Project management">Project management</a></li>
+                      <li class="edge-item-fix"><a href="https://github.com/features/integrations" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Integrations">Integrations</a></li>
+                      <li class="edge-item-fix"><a href="https://github.com/features/actions" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Actions">Actions</a></li>
+                      <li class="edge-item-fix"><a href="https://github.com/features/packages" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to GitHub Packages">Packages</a></li>
+                      <li class="edge-item-fix"><a href="https://github.com/features/security" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Security">Security</a></li>
+                      <li class="edge-item-fix"><a href="https://github.com/features#team-management" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Team management">Team management</a></li>
+                      <li class="edge-item-fix"><a href="https://github.com/features#hosting" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Code hosting">Hosting</a></li>
+                      <li class="edge-item-fix hide-xl"><a href="https://github.com/mobile" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Mobile">Mobile</a></li>
+                    </ul>
+
+                    <ul class="list-style-none mb-0 border-lg-top pt-lg-3">
+                      <li class="edge-item-fix"><a href="https://github.com/customer-stories" class="py-2 lh-condensed-ultra d-block no-underline link-gray-dark no-underline h5 Bump-link--hover" data-ga-click="(Logged out) Header, go to Customer stories">Customer stories <span class="Bump-link-symbol float-right text-normal text-gray-light">→</span></a></li>
+                      <li class="edge-item-fix"><a href="https://github.com/security" class="py-2 lh-condensed-ultra d-block no-underline link-gray-dark no-underline h5 Bump-link--hover" data-ga-click="(Logged out) Header, go to Security">Security <span class="Bump-link-symbol float-right text-normal text-gray-light">→</span></a></li>
+                    </ul>
+                  </div>
+                </details>
+              </li>
+              <li class="border-bottom border-lg-bottom-0 mr-0 mr-lg-3">
+                <a href="https://github.com/team" class="HeaderMenu-link no-underline py-3 d-block d-lg-inline-block" data-ga-click="(Logged out) Header, go to Team">Team</a>
+              </li>
+              <li class="border-bottom border-lg-bottom-0 mr-0 mr-lg-3">
+                <a href="https://github.com/enterprise" class="HeaderMenu-link no-underline py-3 d-block d-lg-inline-block" data-ga-click="(Logged out) Header, go to Enterprise">Enterprise</a>
+              </li>
+
+              <li class="d-block d-lg-flex flex-lg-nowrap flex-lg-items-center border-bottom border-lg-bottom-0 mr-0 mr-lg-3 edge-item-fix position-relative flex-wrap flex-justify-between d-flex flex-items-center ">
+                <details class="HeaderMenu-details details-overlay details-reset width-full">
+                  <summary class="HeaderMenu-summary HeaderMenu-link px-0 py-3 border-0 no-wrap d-block d-lg-inline-block">
+                    Explore
+                    <svg x="0px" y="0px" viewBox="0 0 14 8" xml:space="preserve" fill="none" class="icon-chevon-down-mktg position-absolute position-lg-relative">
+                      <path d="M1,1l6.2,6L13,1"></path>
+                    </svg>
+                  </summary>
+
+                  <div class="dropdown-menu flex-auto rounded-1 bg-white px-0 pt-2 pb-0 mt-0 pb-4 p-lg-4 position-relative position-lg-absolute left-0 left-lg-n4">
+                    <ul class="list-style-none mb-3">
+                      <li class="edge-item-fix"><a href="https://github.com/explore" class="py-2 lh-condensed-ultra d-block link-gray-dark no-underline h5 Bump-link--hover" data-ga-click="(Logged out) Header, go to Explore">Explore GitHub <span class="Bump-link-symbol float-right text-normal text-gray-light">→</span></a></li>
+                    </ul>
+
+                    <h4 class="text-gray-light text-normal text-mono f5 mb-2 border-lg-top pt-lg-3">Learn &amp; contribute</h4>
+                    <ul class="list-style-none mb-3">
+                      <li class="edge-item-fix"><a href="https://github.com/topics" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Topics">Topics</a></li>
+                        <li class="edge-item-fix"><a href="https://github.com/collections" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Collections">Collections</a></li>
+                      <li class="edge-item-fix"><a href="https://github.com/trending" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Trending">Trending</a></li>
+                      <li class="edge-item-fix"><a href="https://lab.github.com/" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Learning lab">Learning Lab</a></li>
+                      <li class="edge-item-fix"><a href="https://opensource.guide/" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Open source guides">Open source guides</a></li>
+                    </ul>
+
+                    <h4 class="text-gray-light text-normal text-mono f5 mb-2 border-lg-top pt-lg-3">Connect with others</h4>
+                    <ul class="list-style-none mb-0">
+                      <li class="edge-item-fix"><a href="https://github.com/events" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Events">Events</a></li>
+                      <li class="edge-item-fix"><a href="https://github.community/" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Community forum">Community forum</a></li>
+                      <li class="edge-item-fix"><a href="https://education.github.com/" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to GitHub Education">GitHub Education</a></li>
+                      <li class="edge-item-fix"><a href="https://stars.github.com/" class="py-2 pb-0 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to GitHub Stars Program">GitHub Stars program</a></li>
+                    </ul>
+                  </div>
+                </details>
+              </li>
+
+              <li class="border-bottom border-lg-bottom-0 mr-0 mr-lg-3">
+                <a href="https://github.com/marketplace" class="HeaderMenu-link no-underline py-3 d-block d-lg-inline-block" data-ga-click="(Logged out) Header, go to Marketplace">Marketplace</a>
+              </li>
+
+              <li class="d-block d-lg-flex flex-lg-nowrap flex-lg-items-center border-bottom border-lg-bottom-0 mr-0 mr-lg-3 edge-item-fix position-relative flex-wrap flex-justify-between d-flex flex-items-center ">
+                <details class="HeaderMenu-details details-overlay details-reset width-full">
+                  <summary class="HeaderMenu-summary HeaderMenu-link px-0 py-3 border-0 no-wrap d-block d-lg-inline-block">
+                    Pricing
+                    <svg x="0px" y="0px" viewBox="0 0 14 8" xml:space="preserve" fill="none" class="icon-chevon-down-mktg position-absolute position-lg-relative">
+                       <path d="M1,1l6.2,6L13,1"></path>
+                    </svg>
+                  </summary>
+
+                  <div class="dropdown-menu flex-auto rounded-1 bg-white px-0 pt-2 pb-4 mt-0 p-lg-4 position-relative position-lg-absolute left-0 left-lg-n4">
+                    <a href="https://github.com/pricing" class="pb-2 lh-condensed-ultra d-block link-gray-dark no-underline h5 Bump-link--hover" data-ga-click="(Logged out) Header, go to Pricing">Plans <span class="Bump-link-symbol float-right text-normal text-gray-light">→</span></a>
+
+                    <ul class="list-style-none mb-3">
+                      <li class="edge-item-fix"><a href="https://github.com/pricing#feature-comparison" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Compare plans">Compare plans</a></li>
+                      <li class="edge-item-fix"><a href="https://enterprise.github.com/contact" class="py-2 lh-condensed-ultra d-block link-gray no-underline f5" data-ga-click="(Logged out) Header, go to Contact Sales">Contact Sales</a></li>
+                    </ul>
+
+                    <ul class="list-style-none mb-0 border-lg-top pt-lg-3">
+                      <li class="edge-item-fix"><a href="https://github.com/nonprofit" class="py-2 lh-condensed-ultra d-block no-underline link-gray-dark no-underline h5 Bump-link--hover" data-ga-click="(Logged out) Header, go to Nonprofits">Nonprofit <span class="Bump-link-symbol float-right text-normal text-gray-light">→</span></a></li>
+                      <li class="edge-item-fix"><a href="https://education.github.com/" class="py-2 pb-0 lh-condensed-ultra d-block no-underline link-gray-dark no-underline h5 Bump-link--hover" data-ga-click="(Logged out) Header, go to Education">Education <span class="Bump-link-symbol float-right text-normal text-gray-light">→</span></a></li>
+                    </ul>
+                  </div>
+                </details>
+              </li>
+          </ul>
+        </nav>
+
+      <div class="d-lg-flex flex-items-center px-3 px-lg-0 text-center text-lg-left">
+          <div class="d-lg-flex mb-3 mb-lg-0">
+            <div class="header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to" role="combobox" aria-owns="jump-to-results" aria-label="Search or jump to" aria-haspopup="listbox" aria-expanded="false">
+  <div class="position-relative">
+    <!-- '"` --><!-- </textarea></xmp> --><form class="js-site-search-form" role="search" aria-label="Site" data-scope-type="Repository" data-scope-id="172426938" data-scoped-search-url="/leoxiaobin/deep-high-resolution-net.pytorch/search" data-owner-scoped-search-url="/users/leoxiaobin/search" data-unscoped-search-url="/search" action="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/search" accept-charset="UTF-8" method="get">
+      <label class="form-control input-sm header-search-wrapper p-0 js-chromeless-input-container header-search-wrapper-jump-to position-relative d-flex flex-justify-between flex-items-center">
+        <input type="text" class="form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus js-site-search-field is-clearable" data-hotkey="s,/" name="q" value="" placeholder="Search" data-unscoped-placeholder="Search GitHub" data-scoped-placeholder="Search" autocapitalize="off" aria-autocomplete="list" aria-controls="jump-to-results" aria-label="Search" data-jump-to-suggestions-path="/_graphql/GetSuggestedNavigationDestinations" spellcheck="false" autocomplete="off">
+          <input type="hidden" data-csrf="true" class="js-data-jump-to-suggestions-path-csrf" value="9D2nMmNUq3Gtnw7KTkgi3qpUB7qSQ84YwcJjC6cV2Rmz/NCU6niBeoJXVsiLfEkTny0k9BdO7TcV+oTM813HSw==">
+          <input type="hidden" class="js-site-search-type-field" name="type">
+            <img src="./GitHub - leoxiaobin_deep-high-resolution-net.pytorch_ The project is an official implementation of our CVPR2019 paper _Deep High-Resolution Representation Learning for Human Pose Estimation__files/search-key-slash.svg" alt="" class="mr-2 header-search-key-slash">
+
+            <div class="Box position-absolute overflow-hidden d-none jump-to-suggestions js-jump-to-suggestions-container">
+              
+<ul class="d-none js-jump-to-suggestions-template-container">
+  
+
+<li class="d-flex flex-justify-start flex-items-center p-0 f5 navigation-item js-navigation-item js-jump-to-suggestion" role="option">
+  <a tabindex="-1" class="no-underline d-flex flex-auto flex-items-center jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open p-2" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE" data-item-type="suggestion">
+    <div class="jump-to-octicon js-jump-to-octicon flex-shrink-0 mr-2 text-center d-none">
+      <svg height="16" width="16" class="octicon octicon-repo flex-shrink-0 js-jump-to-octicon-repo d-none" title="Repository" aria-label="Repository" viewBox="0 0 16 16" version="1.1" role="img"><path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-project flex-shrink-0 js-jump-to-octicon-project d-none" title="Project" aria-label="Project" viewBox="0 0 16 16" version="1.1" role="img"><path fill-rule="evenodd" d="M1.75 0A1.75 1.75 0 000 1.75v12.5C0 15.216.784 16 1.75 16h12.5A1.75 1.75 0 0016 14.25V1.75A1.75 1.75 0 0014.25 0H1.75zM1.5 1.75a.25.25 0 01.25-.25h12.5a.25.25 0 01.25.25v12.5a.25.25 0 01-.25.25H1.75a.25.25 0 01-.25-.25V1.75zM11.75 3a.75.75 0 00-.75.75v7.5a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75zm-8.25.75a.75.75 0 011.5 0v5.5a.75.75 0 01-1.5 0v-5.5zM8 3a.75.75 0 00-.75.75v3.5a.75.75 0 001.5 0v-3.5A.75.75 0 008 3z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-search flex-shrink-0 js-jump-to-octicon-search d-none" title="Search" aria-label="Search" viewBox="0 0 16 16" version="1.1" role="img"><path fill-rule="evenodd" d="M11.5 7a4.499 4.499 0 11-8.998 0A4.499 4.499 0 0111.5 7zm-.82 4.74a6 6 0 111.06-1.06l3.04 3.04a.75.75 0 11-1.06 1.06l-3.04-3.04z"></path></svg>
+    </div>
+
+    <img class="avatar mr-2 flex-shrink-0 js-jump-to-suggestion-avatar d-none" alt="" aria-label="Team" src="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE" width="28" height="28">
+
+    <div class="jump-to-suggestion-name js-jump-to-suggestion-name flex-auto overflow-hidden text-left no-wrap css-truncate css-truncate-target">
+    </div>
+
+    <div class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none js-jump-to-badge-search">
+      <span class="js-jump-to-badge-search-text-default d-none" aria-label="in this repository">
+        In this repository
+      </span>
+      <span class="js-jump-to-badge-search-text-global d-none" aria-label="in all of GitHub">
+        All GitHub
+      </span>
+      <span aria-hidden="true" class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+
+    <div aria-hidden="true" class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none d-on-nav-focus js-jump-to-badge-jump">
+      Jump to
+      <span class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+  </a>
+</li>
+
+</ul>
+
+<ul class="d-none js-jump-to-no-results-template-container">
+  <li class="d-flex flex-justify-center flex-items-center f5 d-none js-jump-to-suggestion p-2">
+    <span class="text-gray">No suggested jump to results</span>
+  </li>
+</ul>
+
+<ul id="jump-to-results" role="listbox" class="p-0 m-0 js-navigation-container jump-to-suggestions-results-container js-jump-to-suggestions-results-container">
+  
+
+<li class="d-flex flex-justify-start flex-items-center p-0 f5 navigation-item js-navigation-item js-jump-to-scoped-search d-none" role="option">
+  <a tabindex="-1" class="no-underline d-flex flex-auto flex-items-center jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open p-2" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE" data-item-type="scoped_search">
+    <div class="jump-to-octicon js-jump-to-octicon flex-shrink-0 mr-2 text-center d-none">
+      <svg height="16" width="16" class="octicon octicon-repo flex-shrink-0 js-jump-to-octicon-repo d-none" title="Repository" aria-label="Repository" viewBox="0 0 16 16" version="1.1" role="img"><path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-project flex-shrink-0 js-jump-to-octicon-project d-none" title="Project" aria-label="Project" viewBox="0 0 16 16" version="1.1" role="img"><path fill-rule="evenodd" d="M1.75 0A1.75 1.75 0 000 1.75v12.5C0 15.216.784 16 1.75 16h12.5A1.75 1.75 0 0016 14.25V1.75A1.75 1.75 0 0014.25 0H1.75zM1.5 1.75a.25.25 0 01.25-.25h12.5a.25.25 0 01.25.25v12.5a.25.25 0 01-.25.25H1.75a.25.25 0 01-.25-.25V1.75zM11.75 3a.75.75 0 00-.75.75v7.5a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75zm-8.25.75a.75.75 0 011.5 0v5.5a.75.75 0 01-1.5 0v-5.5zM8 3a.75.75 0 00-.75.75v3.5a.75.75 0 001.5 0v-3.5A.75.75 0 008 3z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-search flex-shrink-0 js-jump-to-octicon-search d-none" title="Search" aria-label="Search" viewBox="0 0 16 16" version="1.1" role="img"><path fill-rule="evenodd" d="M11.5 7a4.499 4.499 0 11-8.998 0A4.499 4.499 0 0111.5 7zm-.82 4.74a6 6 0 111.06-1.06l3.04 3.04a.75.75 0 11-1.06 1.06l-3.04-3.04z"></path></svg>
+    </div>
+
+    <img class="avatar mr-2 flex-shrink-0 js-jump-to-suggestion-avatar d-none" alt="" aria-label="Team" src="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE" width="28" height="28">
+
+    <div class="jump-to-suggestion-name js-jump-to-suggestion-name flex-auto overflow-hidden text-left no-wrap css-truncate css-truncate-target">
+    </div>
+
+    <div class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none js-jump-to-badge-search">
+      <span class="js-jump-to-badge-search-text-default d-none" aria-label="in this repository">
+        In this repository
+      </span>
+      <span class="js-jump-to-badge-search-text-global d-none" aria-label="in all of GitHub">
+        All GitHub
+      </span>
+      <span aria-hidden="true" class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+
+    <div aria-hidden="true" class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none d-on-nav-focus js-jump-to-badge-jump">
+      Jump to
+      <span class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+  </a>
+</li>
+
+  
+
+<li class="d-flex flex-justify-start flex-items-center p-0 f5 navigation-item js-navigation-item js-jump-to-global-search d-none" role="option">
+  <a tabindex="-1" class="no-underline d-flex flex-auto flex-items-center jump-to-suggestions-path js-jump-to-suggestion-path js-navigation-open p-2" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE" data-item-type="global_search">
+    <div class="jump-to-octicon js-jump-to-octicon flex-shrink-0 mr-2 text-center d-none">
+      <svg height="16" width="16" class="octicon octicon-repo flex-shrink-0 js-jump-to-octicon-repo d-none" title="Repository" aria-label="Repository" viewBox="0 0 16 16" version="1.1" role="img"><path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-project flex-shrink-0 js-jump-to-octicon-project d-none" title="Project" aria-label="Project" viewBox="0 0 16 16" version="1.1" role="img"><path fill-rule="evenodd" d="M1.75 0A1.75 1.75 0 000 1.75v12.5C0 15.216.784 16 1.75 16h12.5A1.75 1.75 0 0016 14.25V1.75A1.75 1.75 0 0014.25 0H1.75zM1.5 1.75a.25.25 0 01.25-.25h12.5a.25.25 0 01.25.25v12.5a.25.25 0 01-.25.25H1.75a.25.25 0 01-.25-.25V1.75zM11.75 3a.75.75 0 00-.75.75v7.5a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75zm-8.25.75a.75.75 0 011.5 0v5.5a.75.75 0 01-1.5 0v-5.5zM8 3a.75.75 0 00-.75.75v3.5a.75.75 0 001.5 0v-3.5A.75.75 0 008 3z"></path></svg>
+      <svg height="16" width="16" class="octicon octicon-search flex-shrink-0 js-jump-to-octicon-search d-none" title="Search" aria-label="Search" viewBox="0 0 16 16" version="1.1" role="img"><path fill-rule="evenodd" d="M11.5 7a4.499 4.499 0 11-8.998 0A4.499 4.499 0 0111.5 7zm-.82 4.74a6 6 0 111.06-1.06l3.04 3.04a.75.75 0 11-1.06 1.06l-3.04-3.04z"></path></svg>
+    </div>
+
+    <img class="avatar mr-2 flex-shrink-0 js-jump-to-suggestion-avatar d-none" alt="" aria-label="Team" src="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE" width="28" height="28">
+
+    <div class="jump-to-suggestion-name js-jump-to-suggestion-name flex-auto overflow-hidden text-left no-wrap css-truncate css-truncate-target">
+    </div>
+
+    <div class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none js-jump-to-badge-search">
+      <span class="js-jump-to-badge-search-text-default d-none" aria-label="in this repository">
+        In this repository
+      </span>
+      <span class="js-jump-to-badge-search-text-global d-none" aria-label="in all of GitHub">
+        All GitHub
+      </span>
+      <span aria-hidden="true" class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+
+    <div aria-hidden="true" class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none d-on-nav-focus js-jump-to-badge-jump">
+      Jump to
+      <span class="d-inline-block ml-1 v-align-middle">↵</span>
+    </div>
+  </a>
+</li>
+
+
+</ul>
+
+            </div>
+      </label>
+</form>  </div>
+</div>
+
+          </div>
+
+        <a href="https://github.com/login?return_to=%2Fleoxiaobin%2Fdeep-high-resolution-net.pytorch%3Ffbclid%3DIwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE" class="HeaderMenu-link no-underline mr-3" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;site header menu&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;originating_url&quot;:&quot;https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="c96048b68d4ef2664fe8c7a9bd09221e61757c7d0f9f3bb69c0a1b23cfc4b28f" data-ga-click="(Logged out) Header, clicked Sign in, text:sign-in">
+          Sign&nbsp;in
+        </a>
+            <a href="https://github.com/join?ref_cta=Sign+up&amp;ref_loc=header+logged+out&amp;ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E&amp;source=header-repo&amp;source_repo=leoxiaobin%2Fdeep-high-resolution-net.pytorch" class="HeaderMenu-link d-inline-block no-underline border border-gray-dark rounded-1 px-2 py-1" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;site header menu&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;originating_url&quot;:&quot;https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="c96048b68d4ef2664fe8c7a9bd09221e61757c7d0f9f3bb69c0a1b23cfc4b28f" data-ga-click="Sign up, click to sign up for account, ref_page:/&lt;user-name&gt;/&lt;repo-name&gt;;ref_cta:Sign up;ref_loc:header logged out">
+              Sign&nbsp;up
+            </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+    </div>
+
+  <div id="start-of-content" class="show-on-focus"></div>
+
+
+
+
+
+    <div data-pjax-replace="" id="js-flash-container">
+
+
+  <template class="js-flash-template"></template>
+</div>
+
+
+    
+
+  <include-fragment class="js-notification-shelf-include-fragment" data-base-src="https://github.com/notifications/beta/shelf"></include-fragment>
+
+
+
+
+  <div class="application-main " data-commit-hovercards-enabled="" data-discussion-hovercards-enabled="" data-issue-and-pr-hovercards-enabled="">
+        <div itemscope="" itemtype="http://schema.org/SoftwareSourceCode" class="">
+    <main id="js-repo-pjax-container" data-pjax-container="">
+      
+
+    
+
+
+
+
+
+
+  
+
+
+  <div class="bg-gray-light pt-3 hide-full-screen mb-5">
+
+      <div class="d-flex mb-3 px-3 px-md-4 px-lg-5">
+
+        <div class="flex-auto min-width-0 width-fit mr-3">
+            <h1 class=" d-flex flex-wrap flex-items-center break-word f3 text-normal">
+    <svg class="octicon octicon-repo text-gray mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"></path></svg>
+    <span class="author flex-self-stretch" itemprop="author">
+      <a class="url fn" rel="author" data-hovercard-type="user" data-hovercard-url="/users/leoxiaobin/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/leoxiaobin">leoxiaobin</a>
+    </span>
+    <span class="mx-1 flex-self-stretch color-text-secondary">/</span>
+  <strong itemprop="name" class="mr-2 flex-self-stretch">
+    <a data-pjax="#js-repo-pjax-container" class="" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch">deep-high-resolution-net.pytorch</a>
+  </strong>
+  
+</h1>
+
+
+        </div>
+
+          <ul class="pagehead-actions flex-shrink-0 d-none d-md-inline" style="padding: 2px 0;">
+
+  <li>
+          <a class="tooltipped tooltipped-s btn btn-sm btn-with-count" aria-label="You must be signed in to watch a repository" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;notification subscription menu watch&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;originating_url&quot;:&quot;https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="787a2683fb814faaf35f837f1d2a6e45ecf8d88730d171f384c579db381eddcc" href="https://github.com/login?return_to=%2Fleoxiaobin%2Fdeep-high-resolution-net.pytorch">
+    <svg class="octicon octicon-eye" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M1.679 7.932c.412-.621 1.242-1.75 2.366-2.717C5.175 4.242 6.527 3.5 8 3.5c1.473 0 2.824.742 3.955 1.715 1.124.967 1.954 2.096 2.366 2.717a.119.119 0 010 .136c-.412.621-1.242 1.75-2.366 2.717C10.825 11.758 9.473 12.5 8 12.5c-1.473 0-2.824-.742-3.955-1.715C2.92 9.818 2.09 8.69 1.679 8.068a.119.119 0 010-.136zM8 2c-1.981 0-3.67.992-4.933 2.078C1.797 5.169.88 6.423.43 7.1a1.619 1.619 0 000 1.798c.45.678 1.367 1.932 2.637 3.024C4.329 13.008 6.019 14 8 14c1.981 0 3.67-.992 4.933-2.078 1.27-1.091 2.187-2.345 2.637-3.023a1.619 1.619 0 000-1.798c-.45-.678-1.367-1.932-2.637-3.023C11.671 2.992 9.981 2 8 2zm0 8a2 2 0 100-4 2 2 0 000 4z"></path></svg>
+    Watch
+</a>    <a class="social-count" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/watchers" aria-label="72 users are watching this repository">
+      72
+    </a>
+
+  </li>
+
+  <li>
+          <a class="btn btn-sm btn-with-count  tooltipped tooltipped-s" aria-label="You must be signed in to star a repository" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;star button&quot;,&quot;repository_id&quot;:172426938,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;originating_url&quot;:&quot;https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="3b7be8b45b609c581e07477bd4f2e9a5ad5db926f187d501298e8fa1d7e689fa" href="https://github.com/login?return_to=%2Fleoxiaobin%2Fdeep-high-resolution-net.pytorch">
+      <svg class="octicon octicon-star v-align-text-bottom" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg>
+      Star
+</a>
+    <a class="social-count js-social-count" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/stargazers" aria-label="2898 users starred this repository">
+      2.9k
+    </a>
+
+  </li>
+
+  <li>
+        <a class="btn btn-sm btn-with-count tooltipped tooltipped-s" aria-label="You must be signed in to fork a repository" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;repo details fork button&quot;,&quot;repository_id&quot;:172426938,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;originating_url&quot;:&quot;https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="67c4e53957a17ba84498fc81bba1711e4f7acc0e1e2d7669da25073700fcc219" href="https://github.com/login?return_to=%2Fleoxiaobin%2Fdeep-high-resolution-net.pytorch">
+          <svg class="octicon octicon-repo-forked" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000 1.5z"></path></svg>
+          Fork
+</a>
+      <a href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/network/members" class="social-count" aria-label="686 users forked this repository">
+        686
+      </a>
+  </li>
+</ul>
+
+      </div>
+          <div class="d-block d-md-none mb-2 px-3 px-md-4 px-lg-5">
+      <p class="f4 mb-3">
+        The project is an official implementation of our CVPR2019 paper "Deep High-Resolution Representation Learning for Human Pose Estimation"
+      </p>
+      <div class="mb-2 d-flex flex-items-center">
+        <svg class="octicon octicon-link flex-shrink-0 mr-2" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg>
+        <span class="flex-auto min-width-0 css-truncate css-truncate-target width-fit">
+          <a title="https://jingdongwang2017.github.io/Projects/HRNet/PoseEstimation.html" role="link" target="_blank" class="text-bold" rel="noopener noreferrer" href="https://jingdongwang2017.github.io/Projects/HRNet/PoseEstimation.html">jingdongwang2017.github.io/projects/hrnet/poseestimation.html</a>
+        </span>
+      </div>
+      <div class="mb-2">
+        <a href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/blob/master/LICENSE" class="muted-link">
+          <svg class="octicon octicon-law mr-1" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.75.75a.75.75 0 00-1.5 0V2h-.984c-.305 0-.604.08-.869.23l-1.288.737A.25.25 0 013.984 3H1.75a.75.75 0 000 1.5h.428L.066 9.192a.75.75 0 00.154.838l.53-.53-.53.53v.001l.002.002.002.002.006.006.016.015.045.04a3.514 3.514 0 00.686.45A4.492 4.492 0 003 11c.88 0 1.556-.22 2.023-.454a3.515 3.515 0 00.686-.45l.045-.04.016-.015.006-.006.002-.002.001-.002L5.25 9.5l.53.53a.75.75 0 00.154-.838L3.822 4.5h.162c.305 0 .604-.08.869-.23l1.289-.737a.25.25 0 01.124-.033h.984V13h-2.5a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-2.5V3.5h.984a.25.25 0 01.124.033l1.29.736c.264.152.563.231.868.231h.162l-2.112 4.692a.75.75 0 00.154.838l.53-.53-.53.53v.001l.002.002.002.002.006.006.016.015.045.04a3.517 3.517 0 00.686.45A4.492 4.492 0 0013 11c.88 0 1.556-.22 2.023-.454a3.512 3.512 0 00.686-.45l.045-.04.01-.01.006-.005.006-.006.002-.002.001-.002-.529-.531.53.53a.75.75 0 00.154-.838L13.823 4.5h.427a.75.75 0 000-1.5h-2.234a.25.25 0 01-.124-.033l-1.29-.736A1.75 1.75 0 009.735 2H8.75V.75zM1.695 9.227c.285.135.718.273 1.305.273s1.02-.138 1.305-.273L3 6.327l-1.305 2.9zm10 0c.285.135.718.273 1.305.273s1.02-.138 1.305-.273L13 6.327l-1.305 2.9z"></path></svg>
+            MIT License
+        </a>
+      </div>
+    <div class="mb-3">
+      <a class="link-gray no-underline mr-3" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/stargazers">
+        <svg class="octicon octicon-star mr-1" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg>
+        <span class="text-bold">2.9k</span>
+        stars
+</a>      <a class="link-gray no-underline" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/network/members">
+        <svg class="octicon octicon-repo-forked mr-1" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000 1.5z"></path></svg>
+        <span class="text-bold">686</span>
+        forks
+</a>    </div>
+    <div class="d-flex">
+      <div class="flex-1 mr-2">
+            <a class="btn btn-sm  btn-block tooltipped tooltipped-s" aria-label="You must be signed in to star a repository" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;star button&quot;,&quot;repository_id&quot;:172426938,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;originating_url&quot;:&quot;https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="3b7be8b45b609c581e07477bd4f2e9a5ad5db926f187d501298e8fa1d7e689fa" href="https://github.com/login?return_to=%2Fleoxiaobin%2Fdeep-high-resolution-net.pytorch">
+      <svg class="octicon octicon-star v-align-text-bottom" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg>
+      Star
+</a>
+
+      </div>
+      <div class="flex-1">
+              <a class="tooltipped tooltipped-s btn btn-sm btn-block" aria-label="You must be signed in to watch a repository" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;notification subscription menu watch&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;LOG_IN&quot;,&quot;originating_url&quot;:&quot;https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="787a2683fb814faaf35f837f1d2a6e45ecf8d88730d171f384c579db381eddcc" href="https://github.com/login?return_to=%2Fleoxiaobin%2Fdeep-high-resolution-net.pytorch">
+    <svg class="octicon octicon-eye" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M1.679 7.932c.412-.621 1.242-1.75 2.366-2.717C5.175 4.242 6.527 3.5 8 3.5c1.473 0 2.824.742 3.955 1.715 1.124.967 1.954 2.096 2.366 2.717a.119.119 0 010 .136c-.412.621-1.242 1.75-2.366 2.717C10.825 11.758 9.473 12.5 8 12.5c-1.473 0-2.824-.742-3.955-1.715C2.92 9.818 2.09 8.69 1.679 8.068a.119.119 0 010-.136zM8 2c-1.981 0-3.67.992-4.933 2.078C1.797 5.169.88 6.423.43 7.1a1.619 1.619 0 000 1.798c.45.678 1.367 1.932 2.637 3.024C4.329 13.008 6.019 14 8 14c1.981 0 3.67-.992 4.933-2.078 1.27-1.091 2.187-2.345 2.637-3.023a1.619 1.619 0 000-1.798c-.45-.678-1.367-1.932-2.637-3.023C11.671 2.992 9.981 2 8 2zm0 8a2 2 0 100-4 2 2 0 000 4z"></path></svg>
+    Watch
+</a>
+      </div>
+    </div>
+  </div>
+
+        
+<nav aria-label="Repository" data-pjax="#js-repo-pjax-container" class="js-repo-nav js-sidenav-container-pjax js-responsive-underlinenav overflow-hidden UnderlineNav px-3 px-md-4 px-lg-5 bg-gray-light">
+  <ul class="UnderlineNav-body list-style-none ">
+          <li class="d-flex">
+        <a class="js-selected-navigation-item selected UnderlineNav-item hx_underlinenav-item no-wrap js-responsive-underlinenav-item" data-tab-item="code-tab" data-hotkey="g c" data-ga-click="Repository, Navigation click, Code tab" aria-current="page" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches repo_packages repo_deployments /leoxiaobin/deep-high-resolution-net.pytorch" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch">
+              <svg class="octicon octicon-code UnderlineNav-octicon d-none d-sm-inline" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M4.72 3.22a.75.75 0 011.06 1.06L2.06 8l3.72 3.72a.75.75 0 11-1.06 1.06L.47 8.53a.75.75 0 010-1.06l4.25-4.25zm6.56 0a.75.75 0 10-1.06 1.06L13.94 8l-3.72 3.72a.75.75 0 101.06 1.06l4.25-4.25a.75.75 0 000-1.06l-4.25-4.25z"></path></svg>
+            <span data-content="Code">Code</span>
+              <span title="Not available" class="Counter "></span>
+</a>      </li>
+      <li class="d-flex">
+        <a class="js-selected-navigation-item UnderlineNav-item hx_underlinenav-item no-wrap js-responsive-underlinenav-item" data-tab-item="issues-tab" data-hotkey="g i" data-ga-click="Repository, Navigation click, Issues tab" data-selected-links="repo_issues repo_labels repo_milestones /leoxiaobin/deep-high-resolution-net.pytorch/issues" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/issues">
+              <svg class="octicon octicon-issue-opened UnderlineNav-octicon d-none d-sm-inline" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9 3a1 1 0 11-2 0 1 1 0 012 0zm-.25-6.25a.75.75 0 00-1.5 0v3.5a.75.75 0 001.5 0v-3.5z"></path></svg>
+            <span data-content="Issues">Issues</span>
+              <span title="140" class="Counter ">140</span>
+</a>      </li>
+      <li class="d-flex">
+        <a class="js-selected-navigation-item UnderlineNav-item hx_underlinenav-item no-wrap js-responsive-underlinenav-item" data-tab-item="pull-requests-tab" data-hotkey="g p" data-ga-click="Repository, Navigation click, Pull requests tab" data-selected-links="repo_pulls checks /leoxiaobin/deep-high-resolution-net.pytorch/pulls" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/pulls">
+              <svg class="octicon octicon-git-pull-request UnderlineNav-octicon d-none d-sm-inline" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.177 3.073L9.573.677A.25.25 0 0110 .854v4.792a.25.25 0 01-.427.177L7.177 3.427a.25.25 0 010-.354zM3.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122v5.256a2.251 2.251 0 11-1.5 0V5.372A2.25 2.25 0 011.5 3.25zM11 2.5h-1V4h1a1 1 0 011 1v5.628a2.251 2.251 0 101.5 0V5A2.5 2.5 0 0011 2.5zm1 10.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0zM3.75 12a.75.75 0 100 1.5.75.75 0 000-1.5z"></path></svg>
+            <span data-content="Pull requests">Pull requests</span>
+              <span title="2" class="Counter ">2</span>
+</a>      </li>
+      <li class="d-flex">
+        <a class="js-selected-navigation-item UnderlineNav-item hx_underlinenav-item no-wrap js-responsive-underlinenav-item" data-tab-item="actions-tab" data-hotkey="g a" data-ga-click="Repository, Navigation click, Actions tab" data-selected-links="repo_actions /leoxiaobin/deep-high-resolution-net.pytorch/actions" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/actions">
+              <svg class="octicon octicon-play UnderlineNav-octicon d-none d-sm-inline" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M1.5 8a6.5 6.5 0 1113 0 6.5 6.5 0 01-13 0zM8 0a8 8 0 100 16A8 8 0 008 0zM6.379 5.227A.25.25 0 006 5.442v5.117a.25.25 0 00.379.214l4.264-2.559a.25.25 0 000-.428L6.379 5.227z"></path></svg>
+            <span data-content="Actions">Actions</span>
+              <span title="Not available" class="Counter "></span>
+</a>      </li>
+      <li class="d-flex">
+        <a class="js-selected-navigation-item UnderlineNav-item hx_underlinenav-item no-wrap js-responsive-underlinenav-item" data-tab-item="projects-tab" data-hotkey="g b" data-ga-click="Repository, Navigation click, Projects tab" data-selected-links="repo_projects new_repo_project repo_project /leoxiaobin/deep-high-resolution-net.pytorch/projects" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/projects">
+              <svg class="octicon octicon-project UnderlineNav-octicon d-none d-sm-inline" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M1.75 0A1.75 1.75 0 000 1.75v12.5C0 15.216.784 16 1.75 16h12.5A1.75 1.75 0 0016 14.25V1.75A1.75 1.75 0 0014.25 0H1.75zM1.5 1.75a.25.25 0 01.25-.25h12.5a.25.25 0 01.25.25v12.5a.25.25 0 01-.25.25H1.75a.25.25 0 01-.25-.25V1.75zM11.75 3a.75.75 0 00-.75.75v7.5a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75zm-8.25.75a.75.75 0 011.5 0v5.5a.75.75 0 01-1.5 0v-5.5zM8 3a.75.75 0 00-.75.75v3.5a.75.75 0 001.5 0v-3.5A.75.75 0 008 3z"></path></svg>
+            <span data-content="Projects">Projects</span>
+              <span title="0" hidden="hidden" class="Counter ">0</span>
+</a>      </li>
+      <li class="d-flex">
+        <a class="js-selected-navigation-item UnderlineNav-item hx_underlinenav-item no-wrap js-responsive-underlinenav-item" data-tab-item="security-tab" data-hotkey="g s" data-ga-click="Repository, Navigation click, Security tab" data-selected-links="security overview alerts policy token_scanning code_scanning /leoxiaobin/deep-high-resolution-net.pytorch/security" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/security">
+              <svg class="octicon octicon-shield UnderlineNav-octicon d-none d-sm-inline" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.467.133a1.75 1.75 0 011.066 0l5.25 1.68A1.75 1.75 0 0115 3.48V7c0 1.566-.32 3.182-1.303 4.682-.983 1.498-2.585 2.813-5.032 3.855a1.7 1.7 0 01-1.33 0c-2.447-1.042-4.049-2.357-5.032-3.855C1.32 10.182 1 8.566 1 7V3.48a1.75 1.75 0 011.217-1.667l5.25-1.68zm.61 1.429a.25.25 0 00-.153 0l-5.25 1.68a.25.25 0 00-.174.238V7c0 1.358.275 2.666 1.057 3.86.784 1.194 2.121 2.34 4.366 3.297a.2.2 0 00.154 0c2.245-.956 3.582-2.104 4.366-3.298C13.225 9.666 13.5 8.36 13.5 7V3.48a.25.25 0 00-.174-.237l-5.25-1.68zM9 10.5a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.75a.75.75 0 10-1.5 0v3a.75.75 0 001.5 0v-3z"></path></svg>
+            <span data-content="Security">Security</span>
+              
+</a>      </li>
+      <li class="d-flex">
+        <a class="js-selected-navigation-item UnderlineNav-item hx_underlinenav-item no-wrap js-responsive-underlinenav-item" data-tab-item="insights-tab" data-ga-click="Repository, Navigation click, Insights tab" data-selected-links="repo_graphs repo_contributors dependency_graph dependabot_updates pulse people /leoxiaobin/deep-high-resolution-net.pytorch/pulse" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/pulse">
+              <svg class="octicon octicon-graph UnderlineNav-octicon d-none d-sm-inline" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M1.5 1.75a.75.75 0 00-1.5 0v12.5c0 .414.336.75.75.75h14.5a.75.75 0 000-1.5H1.5V1.75zm14.28 2.53a.75.75 0 00-1.06-1.06L10 7.94 7.53 5.47a.75.75 0 00-1.06 0L3.22 8.72a.75.75 0 001.06 1.06L7 7.06l2.47 2.47a.75.75 0 001.06 0l5.25-5.25z"></path></svg>
+            <span data-content="Insights">Insights</span>
+              <span title="Not available" class="Counter "></span>
+</a>      </li>
+
+</ul>        <div class="position-absolute right-0 pr-3 pr-md-4 pr-lg-5 js-responsive-underlinenav-overflow" style="visibility:hidden;">
+      <details class="details-overlay details-reset position-relative">
+  <summary role="button">
+    <div class="UnderlineNav-item mr-0 border-0">
+            <svg class="octicon octicon-kebab-horizontal" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 9a1.5 1.5 0 100-3 1.5 1.5 0 000 3zM1.5 9a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm13 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg>
+            <span class="sr-only">More</span>
+          </div>
+</summary>  <div>
+    <details-menu role="menu" class="dropdown-menu dropdown-menu-sw ">
+  
+            <ul>
+                <li data-menu-item="code-tab" hidden="">
+                  <a role="menuitem" class="js-selected-navigation-item selected dropdown-item" aria-current="page" data-selected-links=" /leoxiaobin/deep-high-resolution-net.pytorch" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch">
+                    Code
+</a>                </li>
+                <li data-menu-item="issues-tab" hidden="">
+                  <a role="menuitem" class="js-selected-navigation-item dropdown-item" data-selected-links=" /leoxiaobin/deep-high-resolution-net.pytorch/issues" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/issues">
+                    Issues
+</a>                </li>
+                <li data-menu-item="pull-requests-tab" hidden="">
+                  <a role="menuitem" class="js-selected-navigation-item dropdown-item" data-selected-links=" /leoxiaobin/deep-high-resolution-net.pytorch/pulls" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/pulls">
+                    Pull requests
+</a>                </li>
+                <li data-menu-item="actions-tab" hidden="">
+                  <a role="menuitem" class="js-selected-navigation-item dropdown-item" data-selected-links=" /leoxiaobin/deep-high-resolution-net.pytorch/actions" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/actions">
+                    Actions
+</a>                </li>
+                <li data-menu-item="projects-tab" hidden="">
+                  <a role="menuitem" class="js-selected-navigation-item dropdown-item" data-selected-links=" /leoxiaobin/deep-high-resolution-net.pytorch/projects" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/projects">
+                    Projects
+</a>                </li>
+                <li data-menu-item="security-tab" hidden="">
+                  <a role="menuitem" class="js-selected-navigation-item dropdown-item" data-selected-links=" /leoxiaobin/deep-high-resolution-net.pytorch/security" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/security">
+                    Security
+</a>                </li>
+                <li data-menu-item="insights-tab" hidden="">
+                  <a role="menuitem" class="js-selected-navigation-item dropdown-item" data-selected-links=" /leoxiaobin/deep-high-resolution-net.pytorch/pulse" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/pulse">
+                    Insights
+</a>                </li>
+            </ul>
+
+</details-menu>
+</div></details>    </div>
+
+</nav>
+  </div>
+
+
+<div class="container-xl clearfix new-discussion-timeline px-3 px-md-4 px-lg-5">
+  <div class="repository-content ">
+
+    
+      
+
+  <div class="d-none d-lg-block mt-6 mr-3 Popover top-0 right-0 box-shadow-medium col-3">
+    
+  </div>
+
+    <signup-prompt class="signup-prompt-bg rounded-1" data-prompt="signup" data-optimizely-experiment="signup_prompt_launchpad" data-catalyst="">
+    <div class="signup-prompt p-4 text-center mb-4 rounded-1" data-optimizely-variation="control">
+      <div class="position-relative">
+        <button type="button" class="position-absolute top-0 right-0 btn-link link-gray" data-action="click:signup-prompt#dismiss" data-ga-click="(Logged out) Sign up prompt, clicked Dismiss, text:dismiss" data-optimizely-event="click.dismiss_signup_prompt, 1516825552.1606710165">
+          Dismiss
+        </button>
+        <h3 class="pt-2">Join GitHub today</h3>
+        <p class="col-6 mx-auto">GitHub is home to over 50 million developers working together to host and review code, manage projects, and build software together.</p>
+        <a class="btn btn-primary" data-ga-click="(Logged out) Sign up prompt, clicked Sign up, text:sign-up" data-optimizely-event="click.signup, 1516825552.1606710165" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;files signup prompt&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;originating_url&quot;:&quot;https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="ac59c8ac2c43d256edcd24388b769c55284ad503c1da26a86271588fbd43bed6" href="https://github.com/join?source=prompt-code&amp;source_repo=leoxiaobin%2Fdeep-high-resolution-net.pytorch">Sign up</a>
+      </div>
+    </div>
+
+    <div class="position-relative p-4 p-lg-5 mb-4" data-optimizely-variation="launchpad" hidden="">
+      <div class="d-sm-flex">
+        <div class="col-sm-8 col-md-9 col-lg-8">
+          <h3 class="h2 lh-condensed mt-sm-1 mt-lg-0">GitHub is where the world builds software</h3>
+          <p class="f4 text-gray mt-2 mb-3">Millions of developers and companies build, ship, and maintain their software on GitHub — the largest and most advanced development platform in the world.</p>
+          <div class="d-flex flex-items-center pb-3">
+            <a class="btn btn-primary" data-ga-click="(Logged out) Sign up prompt, clicked Sign up, text:sign-up" data-optimizely-event="click.signup, 1516825552.1606710165" data-hydro-click="{&quot;event_type&quot;:&quot;authentication.click&quot;,&quot;payload&quot;:{&quot;location_in_page&quot;:&quot;files signup prompt&quot;,&quot;repository_id&quot;:null,&quot;auth_type&quot;:&quot;SIGN_UP&quot;,&quot;originating_url&quot;:&quot;https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="ac59c8ac2c43d256edcd24388b769c55284ad503c1da26a86271588fbd43bed6" href="https://github.com/join?source=prompt-code&amp;source_repo=leoxiaobin%2Fdeep-high-resolution-net.pytorch">Sign up for free</a>
+            <button type="button" class="btn-link link-gray ml-3" data-action="click:signup-prompt#dismiss" data-ga-click="(Logged out) Sign up prompt, clicked Dismiss, text:dismiss" data-optimizely-event="click.dismiss_signup_prompt, 1516825552.1606710165">
+              Dismiss
+            </button>
+          </div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" preserveAspectRatio="none" viewBox="0 0 1680 40" class="d-none d-sm-block position-absolute width-full" style="bottom: -1px;"><path d="M0 40h1680V30S1340 0 840 0 0 30 0 30z" fill="#fff"></path></svg>
+
+        <div class="d-none d-sm-block position-absolute col-5 col-md-4 col-lg-3 bottom-0 right-0 mr-lg-5 mb-md-n4">
+          <div class="width-full">
+            <svg viewBox="0 0 300 305" class="width-fit">
+  <defs>
+    <mask id="https___github_githubassets_com_images_modules_site_home_astro-mona-alpha_jpg">
+      <image width="300" height="305" href="https://github.githubassets.com/images/modules/site/home/astro-mona-alpha.jpg"></image>
+    </mask>
+  </defs>
+  <image mask="url(#https___github_githubassets_com_images_modules_site_home_astro-mona-alpha_jpg)" width="300" height="305" href="https://github.githubassets.com/images/modules/site/home/astro-mona.jpg"></image>
+</svg>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </signup-prompt>
+
+
+
+  <div class="gutter-condensed gutter-lg flex-column flex-md-row d-flex">
+
+  <div class="flex-shrink-0 col-12 col-md-9 mb-4 mb-md-0">
+          
+
+
+
+
+
+      <div class="file-navigation mb-3 d-flex flex-items-start">
+  
+<div class="position-relative">
+  <details class="details-reset details-overlay mr-0 mb-0 " id="branch-select-menu">
+    <summary class="btn css-truncate" data-hotkey="w" title="Switch branches or tags" aria-haspopup="menu" role="button">
+      <svg class="octicon octicon-git-branch text-gray" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M11.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122V6A2.5 2.5 0 0110 8.5H6a1 1 0 00-1 1v1.128a2.251 2.251 0 11-1.5 0V5.372a2.25 2.25 0 111.5 0v1.836A2.492 2.492 0 016 7h4a1 1 0 001-1v-.628A2.25 2.25 0 019.5 3.25zM4.25 12a.75.75 0 100 1.5.75.75 0 000-1.5zM3.5 3.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0z"></path></svg>
+      <span class="css-truncate-target" data-menu-button="">master</span>
+      <span class="dropdown-caret"></span>
+    </summary>
+
+    <details-menu class="SelectMenu SelectMenu--hasFilter" src="/leoxiaobin/deep-high-resolution-net.pytorch/refs/master?source_action=disambiguate&amp;source_controller=files" preload="" role="menu">
+      <div class="SelectMenu-modal">
+        <include-fragment class="SelectMenu-loading" aria-label="Menu is loading">
+          <svg class="octicon octicon-octoface anim-pulse" height="32" viewBox="0 0 24 24" version="1.1" width="32" aria-hidden="true"><path d="M7.75 11c-.69 0-1.25.56-1.25 1.25v1.5a1.25 1.25 0 102.5 0v-1.5C9 11.56 8.44 11 7.75 11zm1.27 4.5a.469.469 0 01.48-.5h5a.47.47 0 01.48.5c-.116 1.316-.759 2.5-2.98 2.5s-2.864-1.184-2.98-2.5zm7.23-4.5c-.69 0-1.25.56-1.25 1.25v1.5a1.25 1.25 0 102.5 0v-1.5c0-.69-.56-1.25-1.25-1.25z"></path><path fill-rule="evenodd" d="M21.255 3.82a1.725 1.725 0 00-2.141-1.195c-.557.16-1.406.44-2.264.866-.78.386-1.647.93-2.293 1.677A18.442 18.442 0 0012 5c-.93 0-1.784.059-2.569.17-.645-.74-1.505-1.28-2.28-1.664a13.876 13.876 0 00-2.265-.866 1.725 1.725 0 00-2.141 1.196 23.645 23.645 0 00-.69 3.292c-.125.97-.191 2.07-.066 3.112C1.254 11.882 1 13.734 1 15.527 1 19.915 3.13 23 12 23c8.87 0 11-3.053 11-7.473 0-1.794-.255-3.647-.99-5.29.127-1.046.06-2.15-.066-3.125a23.652 23.652 0 00-.689-3.292zM20.5 14c.5 3.5-1.5 6.5-8.5 6.5s-9-3-8.5-6.5c.583-4 3-6 8.5-6s7.928 2 8.5 6z"></path></svg>
+        </include-fragment>
+      </div>
+    </details-menu>
+  </details>
+
+</div>
+
+
+  <div class="flex-self-center ml-3 flex-self-stretch d-none d-lg-flex flex-items-center lh-condensed-ultra">
+    <a data-pjax="" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/branches" class="link-gray-dark no-underline">
+      <svg class="octicon octicon-git-branch text-gray" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M11.75 2.5a.75.75 0 100 1.5.75.75 0 000-1.5zm-2.25.75a2.25 2.25 0 113 2.122V6A2.5 2.5 0 0110 8.5H6a1 1 0 00-1 1v1.128a2.251 2.251 0 11-1.5 0V5.372a2.25 2.25 0 111.5 0v1.836A2.492 2.492 0 016 7h4a1 1 0 001-1v-.628A2.25 2.25 0 019.5 3.25zM4.25 12a.75.75 0 100 1.5.75.75 0 000-1.5zM3.5 3.25a.75.75 0 111.5 0 .75.75 0 01-1.5 0z"></path></svg>
+      <strong>1</strong>
+      <span class="text-gray-light">branch</span>
+    </a>
+    <a data-pjax="" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/tags" class="ml-3 link-gray-dark no-underline">
+      <svg class="octicon octicon-tag text-gray" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z"></path></svg>
+      <strong>0</strong>
+      <span class="text-gray-light">tags</span>
+    </a>
+  </div>
+
+  <div class="flex-auto"></div>
+
+  <a class="btn ml-2" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FIND_FILE_BUTTON&quot;,&quot;repository_id&quot;:172426938,&quot;originating_url&quot;:&quot;https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="fbeba8d56b4e3c8a947ac3c6ea9adc8747a0e8262eeef39f75f1b84e4cb17fad" data-ga-click="Repository, find file, location:repo overview" data-hotkey="t" data-pjax="true" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/find/master">
+    Go to file
+</a>
+
+
+
+    <span class="d-none d-md-flex ml-2">
+        
+<get-repo data-catalyst="">
+  <details class="position-relative details-overlay details-reset" data-action="toggle:get-repo#onDetailsToggle">
+    <summary class="btn btn-primary" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;repository_id&quot;:172426938,&quot;target&quot;:&quot;CLONE_OR_DOWNLOAD_BUTTON&quot;,&quot;originating_url&quot;:&quot;https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="8a9182e630ce2e9eee88bc98ed376743fcff7f100017249b3007549430a9d600">
+      <svg class="octicon octicon-download mr-1" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.47 10.78a.75.75 0 001.06 0l3.75-3.75a.75.75 0 00-1.06-1.06L8.75 8.44V1.75a.75.75 0 00-1.5 0v6.69L4.78 5.97a.75.75 0 00-1.06 1.06l3.75 3.75zM3.75 13a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5z"></path></svg>
+      Code
+      <span class="dropdown-caret"></span>
+</summary>    <div class="position-relative">
+      <div class="dropdown-menu dropdown-menu-sw p-0" style="top:6px;width:352px;">
+        <div data-target="get-repo.modal">
+          <div class="border-bottom p-3">
+            <a class="muted-link float-right tooltipped tooltipped-s" href="https://docs.github.com/articles/which-remote-url-should-i-use" target="_blank" aria-label="Which remote URL should I use?">
+  <svg class="octicon octicon-question" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm9 3a1 1 0 11-2 0 1 1 0 012 0zM6.92 6.085c.081-.16.19-.299.34-.398.145-.097.371-.187.74-.187.28 0 .553.087.738.225A.613.613 0 019 6.25c0 .177-.04.264-.077.318a.956.956 0 01-.277.245c-.076.051-.158.1-.258.161l-.007.004a7.728 7.728 0 00-.313.195 2.416 2.416 0 00-.692.661.75.75 0 001.248.832.956.956 0 01.276-.245 6.3 6.3 0 01.26-.16l.006-.004c.093-.057.204-.123.313-.195.222-.149.487-.355.692-.662.214-.32.329-.702.329-1.15 0-.76-.36-1.348-.863-1.725A2.76 2.76 0 008 4c-.631 0-1.155.16-1.572.438-.413.276-.68.638-.849.977a.75.75 0 101.342.67z"></path></svg>
+</a>
+
+<div class="text-bold">
+  <svg class="octicon octicon-terminal mr-3" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 2.75C0 1.784.784 1 1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0114.25 15H1.75A1.75 1.75 0 010 13.25V2.75zm1.75-.25a.25.25 0 00-.25.25v10.5c0 .138.112.25.25.25h12.5a.25.25 0 00.25-.25V2.75a.25.25 0 00-.25-.25H1.75zM7.25 8a.75.75 0 01-.22.53l-2.25 2.25a.75.75 0 11-1.06-1.06L5.44 8 3.72 6.28a.75.75 0 111.06-1.06l2.25 2.25c.141.14.22.331.22.53zm1.5 1.5a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3z"></path></svg>
+  Clone
+</div>
+
+<tab-container>
+
+  <div class="UnderlineNav my-2 box-shadow-none">
+    <div class="UnderlineNav-body" role="tablist">
+      <!-- '"` --><!-- </textarea></xmp> --><form data-remote="true" action="https://github.com/users/set_protocol?protocol_type=clone" accept-charset="UTF-8" method="post"><input type="hidden" data-csrf="true" name="authenticity_token" value="YeIXfe9a82BDpu/hHrx/FMabdbqYRsrENujr45NL/KxXNe88bBaBnj7YzZ7CYBsG5SfFZfKX+QuMPJIY8TgAjQ==">
+          <button name="protocol_selector" type="submit" role="tab" class="UnderlineNav-item lh-default f6 py-0 px-0 mr-2 position-relative" aria-selected="true" value="http" data-hydro-click="{&quot;event_type&quot;:&quot;clone_or_download.click&quot;,&quot;payload&quot;:{&quot;feature_clicked&quot;:&quot;USE_HTTPS&quot;,&quot;git_repository_type&quot;:&quot;REPOSITORY&quot;,&quot;repository_id&quot;:172426938,&quot;originating_url&quot;:&quot;https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="51ccb9b9b21e277eb7a30898f0940d9d0da8e6e39d2b134893b3bc08c9eed0d0" tabindex="0">
+            HTTPS
+</button>          <button name="protocol_selector" type="submit" role="tab" class="UnderlineNav-item lh-default f6 py-0 px-0 mr-2 position-relative" value="gh_cli" data-hydro-click="{&quot;event_type&quot;:&quot;clone_or_download.click&quot;,&quot;payload&quot;:{&quot;feature_clicked&quot;:&quot;USE_GH_CLI&quot;,&quot;git_repository_type&quot;:&quot;REPOSITORY&quot;,&quot;repository_id&quot;:172426938,&quot;originating_url&quot;:&quot;https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="b86d78e15ffd318a1e70118b9e075a48d1766b09e4073446c204aa508089e3bf" aria-selected="false" tabindex="-1">
+            GitHub CLI
+</button></form>    </div>
+  </div>
+
+  <div role="tabpanel">
+    <div class="input-group">
+  <input type="text" class="form-control input-monospace input-sm bg-gray-light" data-autoselect="" value="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch.git" aria-label="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch.git" readonly="">
+  <div class="input-group-button">
+    <clipboard-copy value="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch.git" aria-label="Copy to clipboard" class="btn btn-sm" data-hydro-click="{&quot;event_type&quot;:&quot;clone_or_download.click&quot;,&quot;payload&quot;:{&quot;feature_clicked&quot;:&quot;COPY_URL&quot;,&quot;git_repository_type&quot;:&quot;REPOSITORY&quot;,&quot;repository_id&quot;:172426938,&quot;originating_url&quot;:&quot;https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="56464e549c435709a6703e9326f9433c5e0e5a186c02d9c5af510bb48e39a9f0" tabindex="0" role="button"><svg class="octicon octicon-clippy" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"></path></svg></clipboard-copy>
+  </div>
+</div>
+
+    <p class="mt-2 mb-0 f6 text-gray">
+        Use Git or checkout with SVN using the web URL.
+    </p>
+  </div>
+
+
+  <div role="tabpanel" hidden="">
+    <div class="input-group">
+  <input type="text" class="form-control input-monospace input-sm bg-gray-light" data-autoselect="" value="gh repo clone leoxiaobin/deep-high-resolution-net.pytorch" aria-label="gh repo clone leoxiaobin/deep-high-resolution-net.pytorch" readonly="">
+  <div class="input-group-button">
+    <clipboard-copy value="gh repo clone leoxiaobin/deep-high-resolution-net.pytorch" aria-label="Copy to clipboard" class="btn btn-sm" data-hydro-click="{&quot;event_type&quot;:&quot;clone_or_download.click&quot;,&quot;payload&quot;:{&quot;feature_clicked&quot;:&quot;COPY_URL&quot;,&quot;git_repository_type&quot;:&quot;REPOSITORY&quot;,&quot;repository_id&quot;:172426938,&quot;originating_url&quot;:&quot;https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="56464e549c435709a6703e9326f9433c5e0e5a186c02d9c5af510bb48e39a9f0" tabindex="0" role="button"><svg class="octicon octicon-clippy" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.75 1a.75.75 0 00-.75.75v3c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-3a.75.75 0 00-.75-.75h-4.5zm.75 3V2.5h3V4h-3zm-2.874-.467a.75.75 0 00-.752-1.298A1.75 1.75 0 002 3.75v9.5c0 .966.784 1.75 1.75 1.75h8.5A1.75 1.75 0 0014 13.25v-9.5a1.75 1.75 0 00-.874-1.515.75.75 0 10-.752 1.298.25.25 0 01.126.217v9.5a.25.25 0 01-.25.25h-8.5a.25.25 0 01-.25-.25v-9.5a.25.25 0 01.126-.217z"></path></svg></clipboard-copy>
+  </div>
+</div>
+
+    <p class="mt-2 mb-0 f6 text-gray">
+      Work fast with our official CLI.
+      <a href="https://cli.github.com/" target="_blank">Learn more</a>.
+    </p>
+  </div>
+</tab-container>
+
+          </div>
+          <ul class="list-style-none">
+            <li data-platforms="windows,mac" class="Box-row Box-row--hover-gray p-0 rounded-0 mt-0 js-remove-unless-platform">
+              <a class="d-flex flex-items-center text-gray-dark text-bold no-underline p-3" data-hydro-click="{&quot;event_type&quot;:&quot;clone_or_download.click&quot;,&quot;payload&quot;:{&quot;feature_clicked&quot;:&quot;OPEN_IN_DESKTOP&quot;,&quot;git_repository_type&quot;:&quot;REPOSITORY&quot;,&quot;repository_id&quot;:172426938,&quot;originating_url&quot;:&quot;https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="1a2515cb97d050209882b1321631e3e39bee53ffd085f6c06cc411712c288a0d" data-action="click:get-repo#showDownloadMessage" href="https://desktop.github.com/">
+                <svg class="octicon octicon-desktop-download mr-3" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.75 5V.75a.75.75 0 00-1.5 0V5H5.104a.25.25 0 00-.177.427l2.896 2.896a.25.25 0 00.354 0l2.896-2.896A.25.25 0 0010.896 5H8.75zM1.5 2.75a.25.25 0 01.25-.25h3a.75.75 0 000-1.5h-3A1.75 1.75 0 000 2.75v7.5C0 11.216.784 12 1.75 12h3.727c-.1 1.041-.52 1.872-1.292 2.757A.75.75 0 004.75 16h6.5a.75.75 0 00.565-1.243c-.772-.885-1.193-1.716-1.292-2.757h3.727A1.75 1.75 0 0016 10.25v-7.5A1.75 1.75 0 0014.25 1h-3a.75.75 0 000 1.5h3a.25.25 0 01.25.25v7.5a.25.25 0 01-.25.25H1.75a.25.25 0 01-.25-.25v-7.5zM9.018 12H6.982a5.72 5.72 0 01-.765 2.5h3.566a5.72 5.72 0 01-.765-2.5z"></path></svg>
+                Open with GitHub Desktop
+</a>            </li>
+            <li class="Box-row Box-row--hover-gray p-0">
+              <a class="d-flex flex-items-center text-gray-dark text-bold no-underline p-3" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;clone_or_download.click&quot;,&quot;payload&quot;:{&quot;feature_clicked&quot;:&quot;DOWNLOAD_ZIP&quot;,&quot;git_repository_type&quot;:&quot;REPOSITORY&quot;,&quot;repository_id&quot;:172426938,&quot;originating_url&quot;:&quot;https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="a93d745ae6fa02478418e76ad362756d8c1bdf2d2a0f220a7667c18d795274b1" data-ga-click="Repository, download zip, location:repo overview" data-open-app="link" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/archive/master.zip">
+                <svg class="octicon octicon-file-zip mr-3" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M3.5 1.75a.25.25 0 01.25-.25h3a.75.75 0 000 1.5h.5a.75.75 0 000-1.5h2.086a.25.25 0 01.177.073l2.914 2.914a.25.25 0 01.073.177v8.586a.25.25 0 01-.25.25h-.5a.75.75 0 000 1.5h.5A1.75 1.75 0 0014 13.25V4.664c0-.464-.184-.909-.513-1.237L10.573.513A1.75 1.75 0 009.336 0H3.75A1.75 1.75 0 002 1.75v11.5c0 .649.353 1.214.874 1.515a.75.75 0 10.752-1.298.25.25 0 01-.126-.217V1.75zM8.75 3a.75.75 0 000 1.5h.5a.75.75 0 000-1.5h-.5zM6 5.25a.75.75 0 01.75-.75h.5a.75.75 0 010 1.5h-.5A.75.75 0 016 5.25zm2 1.5A.75.75 0 018.75 6h.5a.75.75 0 010 1.5h-.5A.75.75 0 018 6.75zm-1.25.75a.75.75 0 000 1.5h.5a.75.75 0 000-1.5h-.5zM8 9.75A.75.75 0 018.75 9h.5a.75.75 0 010 1.5h-.5A.75.75 0 018 9.75zm-.75.75a1.75 1.75 0 00-1.75 1.75v3c0 .414.336.75.75.75h2.5a.75.75 0 00.75-.75v-3a1.75 1.75 0 00-1.75-1.75h-.5zM7 12.25a.25.25 0 01.25-.25h.5a.25.25 0 01.25.25v2.25H7v-2.25z"></path></svg>
+                Download ZIP
+</a>            </li>
+          </ul>
+        </div>
+
+        <div class="p-3" data-targets="get-repo.platforms" data-platform="mac" hidden="">
+          <h4 class="lh-condensed mb-3">Launching GitHub Desktop<span class="AnimatedEllipsis"></span></h4>
+          <p class="text-gray">If nothing happens, <a href="https://desktop.github.com/">download GitHub Desktop</a> and try again.</p>
+          <button type="button" class="btn-link" data-action="click:get-repo#onDetailsToggle">Go back</button>
+        </div>
+
+        <div class="p-3" data-targets="get-repo.platforms" data-platform="windows" hidden="">
+          <h4 class="lh-condensed mb-3">Launching GitHub Desktop<span class="AnimatedEllipsis"></span></h4>
+          <p class="text-gray">If nothing happens, <a href="https://desktop.github.com/">download GitHub Desktop</a> and try again.</p>
+          <button type="button" class="btn-link" data-action="click:get-repo#onDetailsToggle">Go back</button>
+        </div>
+
+        <div class="p-3" data-targets="get-repo.platforms" data-platform="xcode" hidden="">
+          <h4 class="lh-condensed mb-3">Launching Xcode<span class="AnimatedEllipsis"></span></h4>
+          <p class="text-gray">If nothing happens, <a href="https://developer.apple.com/xcode/">download Xcode</a> and try again.</p>
+          <button type="button" class="btn-link" data-action="click:get-repo#onDetailsToggle">Go back</button>
+        </div>
+
+        <div class="p-3" data-targets="get-repo.platforms" data-platform="visual-studio" hidden="">
+          <h4 class="lh-condensed mb-3">Launching Visual Studio<span class="AnimatedEllipsis"></span></h4>
+          <p class="text-gray">If nothing happens, <a href="https://visualstudio.github.com/">download the GitHub extension for Visual Studio</a> and try again.</p>
+          <button type="button" class="btn-link" data-action="click:get-repo#onDetailsToggle">Go back</button>
+        </div>
+
+      </div>
+    </div>
+  </details>
+</get-repo>
+
+
+      
+    </span>
+</div>
+
+
+      
+
+<div class="Box mb-3">
+  <div class="Box-header Box-header--blue position-relative">
+    <h2 class="sr-only">Latest commit</h2>
+    <div class="js-details-container Details d-flex rounded-top-1 flex-items-center flex-wrap" data-issue-and-pr-hovercards-enabled="">
+      
+  <div class="flex-shrink-0 ml-n1 mr-n1 mt-n1 mb-n1 hx_avatar_stack_commit">
+    
+<div class="AvatarStack flex-self-start ">
+  <div class="AvatarStack-body" aria-label="leoxiaobin">
+        <a class="avatar avatar-user" data-skip-pjax="true" data-hovercard-type="user" data-hovercard-url="/users/leoxiaobin/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" style="width:24px;height:24px;" href="https://github.com/leoxiaobin">
+          <img height="24" width="24" alt="@leoxiaobin" src="./GitHub - leoxiaobin_deep-high-resolution-net.pytorch_ The project is an official implementation of our CVPR2019 paper _Deep High-Resolution Representation Learning for Human Pose Estimation__files/5362509" class=" avatar-user">
+</a>  </div>
+</div>
+
+  </div>
+  <div class="flex-1 d-flex flex-items-center ml-3 min-width-0">
+    <div class="css-truncate css-truncate-overflow text-gray">
+      
+      <a href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/commits?author=leoxiaobin" class="commit-author user-mention" title="View all commits by leoxiaobin">leoxiaobin</a>
+
+
+  
+
+        <span class="d-none d-sm-inline">
+          <a data-pjax="true" title="Update README.md" class="link-gray-dark" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/commit/ba50a82dce412df97f088c572d86d7977753bf74">Update README.md</a>
+        </span>
+    </div>
+    <span class="hidden-text-expander ml-2 d-inline-block d-inline-block d-lg-none">
+      <button type="button" class="hx_bg-black-fade-15 text-gray-dark ellipsis-expander js-details-target" aria-expanded="false">…</button>
+    </span>
+    <div class="d-flex flex-auto flex-justify-end ml-3 flex-items-baseline">
+        
+      <a href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/commit/ba50a82dce412df97f088c572d86d7977753bf74" class="f6 link-gray text-mono ml-2 d-none d-lg-inline" data-pjax="">ba50a82</a>
+      <a href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/commit/ba50a82dce412df97f088c572d86d7977753bf74" class="link-gray ml-2" data-pjax="">
+        <relative-time datetime="2020-07-15T05:58:25Z" class="no-wrap" title="Jul 15, 2020, 1:58 PM GMT+8">on Jul 15</relative-time>
+      </a>
+    </div>
+  </div>
+  <div class="pl-0 pl-md-5 flex-order-1 width-full Details-content--hidden">
+      <div class="mt-2">
+        <a data-pjax="true" class="link-gray-dark text-bold" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/commit/ba50a82dce412df97f088c572d86d7977753bf74">Update README.md</a>
+      </div>
+
+    <div class="d-flex flex-items-center">
+      <span class="text-gray-dark text-mono d-lg-none hx_bg-black-fade-15 px-1 rounded-1 text-small mt-2">ba50a82</span>
+    </div>
+  </div>
+      <div class="flex-shrink-0">
+        <h2 class="sr-only">Git stats</h2>
+        <ul class="list-style-none d-flex">
+          <li class="ml-0 ml-md-3">
+            <a data-pjax="" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/commits/master" class="pl-3 pr-3 py-3 p-md-0 mt-n3 mb-n3 mr-n3 m-md-0 link-gray-dark no-underline no-wrap">
+              <svg class="octicon octicon-history text-gray" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M1.643 3.143L.427 1.927A.25.25 0 000 2.104V5.75c0 .138.112.25.25.25h3.646a.25.25 0 00.177-.427L2.715 4.215a6.5 6.5 0 11-1.18 4.458.75.75 0 10-1.493.154 8.001 8.001 0 101.6-5.684zM7.75 4a.75.75 0 01.75.75v2.992l2.028.812a.75.75 0 01-.557 1.392l-2.5-1A.75.75 0 017 8.25v-3.5A.75.75 0 017.75 4z"></path></svg>
+              <span class="d-none d-sm-inline">
+                    <strong>52</strong>
+                  <span aria-label="Commits on master" class="text-gray d-none d-lg-inline">commits</span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <h2 id="files" class="sr-only">Files</h2>
+  
+
+
+    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/tree/ba50a82dce412df97f088c572d86d7977753bf74">Permalink</a>
+
+  <div class="include-fragment-error flash flash-error flash-full py-2">
+  <svg class="octicon octicon-alert" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path></svg>
+  
+    Failed to load latest commit information.
+
+</div>  <div class="js-details-container Details">
+    <div role="grid" aria-labelledby="files" class="Details-content--hidden-not-important js-navigation-container js-active-navigation-container d-md-block" data-pjax="">
+      <div class="sr-only" role="row">
+        <div role="columnheader">Type</div>
+        <div role="columnheader">Name</div>
+        <div role="columnheader" class="d-none d-md-block">Latest commit message</div>
+        <div role="columnheader">Commit time</div>
+      </div>
+
+        <div role="row" class="Box-row Box-row--focus-gray py-2 d-flex position-relative js-navigation-item">
+          <div role="gridcell" class="mr-3 flex-shrink-0" style="width: 16px;">
+              <svg aria-label="Directory" class="octicon octicon-file-directory text-color-icon-directory" height="16" viewBox="0 0 16 16" version="1.1" width="16" role="img"><path fill-rule="evenodd" d="M1.75 1A1.75 1.75 0 000 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0016 13.25v-8.5A1.75 1.75 0 0014.25 3h-6.5a.25.25 0 01-.2-.1l-.9-1.2c-.33-.44-.85-.7-1.4-.7h-3.5z"></path></svg>
+
+          </div>
+
+          <div role="rowheader" class="flex-auto min-width-0 col-md-2 mr-3">
+            <span class="css-truncate css-truncate-target d-block width-fit"><a class="js-navigation-open link-gray-dark" title="demo" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/tree/master/demo">demo</a></span>
+          </div>
+
+          <div role="gridcell" class="flex-auto min-width-0 d-none d-md-block col-5 mr-3">
+              <span class="css-truncate css-truncate-target d-block width-fit">
+                    <a data-pjax="true" title="Re-write demo/inference.py
+* Now can work with multiple person
+* Don&#39;t need the docker
+* Force people detection and pose estimation to be executed on same context (gpu or cpu)
+* Add same example output" class="link-gray" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/commit/69934d51e178539bf845da0ecf2ead463a4a8c5d">Re-write demo/inference.py</a>
+              </span>
+          </div>
+
+          <div role="gridcell" class="text-gray-light text-right" style="width:100px;">
+              <time-ago datetime="2020-04-03T12:04:09Z" class="no-wrap" title="Apr 3, 2020, 8:04 PM GMT+8">8 months ago</time-ago>
+          </div>
+
+        </div>
+        <div role="row" class="Box-row Box-row--focus-gray py-2 d-flex position-relative js-navigation-item navigation-focus">
+          <div role="gridcell" class="mr-3 flex-shrink-0" style="width: 16px;">
+              <svg aria-label="Directory" class="octicon octicon-file-directory text-color-icon-directory" height="16" viewBox="0 0 16 16" version="1.1" width="16" role="img"><path fill-rule="evenodd" d="M1.75 1A1.75 1.75 0 000 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0016 13.25v-8.5A1.75 1.75 0 0014.25 3h-6.5a.25.25 0 01-.2-.1l-.9-1.2c-.33-.44-.85-.7-1.4-.7h-3.5z"></path></svg>
+
+          </div>
+
+          <div role="rowheader" class="flex-auto min-width-0 col-md-2 mr-3">
+            <span class="css-truncate css-truncate-target d-block width-fit"><a class="js-navigation-open link-gray-dark" title="experiments" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/tree/master/experiments">experiments</a></span>
+          </div>
+
+          <div role="gridcell" class="flex-auto min-width-0 d-none d-md-block col-5 mr-3">
+              <span class="css-truncate css-truncate-target d-block width-fit">
+                    <a data-pjax="true" title="add config files for coco resnet" class="link-gray" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/commit/f8897aaf99527f1d82b2c15ac49469455cb257c0">add config files for coco resnet</a>
+              </span>
+          </div>
+
+          <div role="gridcell" class="text-gray-light text-right" style="width:100px;">
+              <time-ago datetime="2019-03-06T15:33:56Z" class="no-wrap" title="Mar 6, 2019, 11:33 PM GMT+8">2 years ago</time-ago>
+          </div>
+
+        </div>
+        <div role="row" class="Box-row Box-row--focus-gray py-2 d-flex position-relative js-navigation-item">
+          <div role="gridcell" class="mr-3 flex-shrink-0" style="width: 16px;">
+              <svg aria-label="Directory" class="octicon octicon-file-directory text-color-icon-directory" height="16" viewBox="0 0 16 16" version="1.1" width="16" role="img"><path fill-rule="evenodd" d="M1.75 1A1.75 1.75 0 000 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0016 13.25v-8.5A1.75 1.75 0 0014.25 3h-6.5a.25.25 0 01-.2-.1l-.9-1.2c-.33-.44-.85-.7-1.4-.7h-3.5z"></path></svg>
+
+          </div>
+
+          <div role="rowheader" class="flex-auto min-width-0 col-md-2 mr-3">
+            <span class="css-truncate css-truncate-target d-block width-fit"><a class="js-navigation-open link-gray-dark" title="figures" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/tree/master/figures">figures</a></span>
+          </div>
+
+          <div role="gridcell" class="flex-auto min-width-0 d-none d-md-block col-5 mr-3">
+              <span class="css-truncate css-truncate-target d-block width-fit">
+                    <a data-pjax="true" title="removed unused figures" class="link-gray" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/commit/0e74ce0653e3781217898e190e61a5e32e7a131b">removed unused figures</a>
+              </span>
+          </div>
+
+          <div role="gridcell" class="text-gray-light text-right" style="width:100px;">
+              <time-ago datetime="2019-11-20T06:34:42Z" class="no-wrap" title="Nov 20, 2019, 2:34 PM GMT+8">13 months ago</time-ago>
+          </div>
+
+        </div>
+        <div role="row" class="Box-row Box-row--focus-gray py-2 d-flex position-relative js-navigation-item">
+          <div role="gridcell" class="mr-3 flex-shrink-0" style="width: 16px;">
+              <svg aria-label="Directory" class="octicon octicon-file-directory text-color-icon-directory" height="16" viewBox="0 0 16 16" version="1.1" width="16" role="img"><path fill-rule="evenodd" d="M1.75 1A1.75 1.75 0 000 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0016 13.25v-8.5A1.75 1.75 0 0014.25 3h-6.5a.25.25 0 01-.2-.1l-.9-1.2c-.33-.44-.85-.7-1.4-.7h-3.5z"></path></svg>
+
+          </div>
+
+          <div role="rowheader" class="flex-auto min-width-0 col-md-2 mr-3">
+            <span class="css-truncate css-truncate-target d-block width-fit"><a class="js-navigation-open link-gray-dark" title="lib" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/tree/master/lib">lib</a></span>
+          </div>
+
+          <div role="gridcell" class="flex-auto min-width-0 d-none d-md-block col-5 mr-3">
+              <span class="css-truncate css-truncate-target d-block width-fit">
+                    <a data-pjax="true" title="unify addressing to cfg, reuse cfg[&#39;MODEL&#39;][&#39;EXTRA&#39;]
+
+some data retrieving from cfg looks like retrieving from dict, some like from Namespace&#39;s instance or custom class&#39; instance
+&quot;extra&quot; is defined, why does the code ignore it later?" class="link-gray" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/commit/94750322734f5fa50756a4032e13913d40c10fec">unify addressing to cfg, reuse cfg['MODEL']['EXTRA']</a>
+              </span>
+          </div>
+
+          <div role="gridcell" class="text-gray-light text-right" style="width:100px;">
+              <time-ago datetime="2020-02-24T11:14:39Z" class="no-wrap" title="Feb 24, 2020, 7:14 PM GMT+8">9 months ago</time-ago>
+          </div>
+
+        </div>
+        <div role="row" class="Box-row Box-row--focus-gray py-2 d-flex position-relative js-navigation-item">
+          <div role="gridcell" class="mr-3 flex-shrink-0" style="width: 16px;">
+              <svg aria-label="Directory" class="octicon octicon-file-directory text-color-icon-directory" height="16" viewBox="0 0 16 16" version="1.1" width="16" role="img"><path fill-rule="evenodd" d="M1.75 1A1.75 1.75 0 000 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0016 13.25v-8.5A1.75 1.75 0 0014.25 3h-6.5a.25.25 0 01-.2-.1l-.9-1.2c-.33-.44-.85-.7-1.4-.7h-3.5z"></path></svg>
+
+          </div>
+
+          <div role="rowheader" class="flex-auto min-width-0 col-md-2 mr-3">
+            <span class="css-truncate css-truncate-target d-block width-fit"><a class="js-navigation-open link-gray-dark" title="tools" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/tree/master/tools">tools</a></span>
+          </div>
+
+          <div role="gridcell" class="flex-auto min-width-0 d-none d-md-block col-5 mr-3">
+              <span class="css-truncate css-truncate-target d-block width-fit">
+                    <a data-pjax="true" title="delete useless code" class="link-gray" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/commit/b0199ef5f97d47cfc6a8532e19a7176b932fbf74">delete useless code</a>
+              </span>
+          </div>
+
+          <div role="gridcell" class="text-gray-light text-right" style="width:100px;">
+              <time-ago datetime="2019-04-11T02:48:46Z" class="no-wrap" title="Apr 11, 2019, 10:48 AM GMT+8">2 years ago</time-ago>
+          </div>
+
+        </div>
+        <div role="row" class="Box-row Box-row--focus-gray py-2 d-flex position-relative js-navigation-item">
+          <div role="gridcell" class="mr-3 flex-shrink-0" style="width: 16px;">
+              <svg aria-label="Directory" class="octicon octicon-file-directory text-color-icon-directory" height="16" viewBox="0 0 16 16" version="1.1" width="16" role="img"><path fill-rule="evenodd" d="M1.75 1A1.75 1.75 0 000 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0016 13.25v-8.5A1.75 1.75 0 0014.25 3h-6.5a.25.25 0 01-.2-.1l-.9-1.2c-.33-.44-.85-.7-1.4-.7h-3.5z"></path></svg>
+
+          </div>
+
+          <div role="rowheader" class="flex-auto min-width-0 col-md-2 mr-3">
+            <span class="css-truncate css-truncate-target d-block width-fit"><a class="js-navigation-open link-gray-dark" title="visualization" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/tree/master/visualization">visualization</a></span>
+          </div>
+
+          <div role="gridcell" class="flex-auto min-width-0 d-none d-md-block col-5 mr-3">
+              <span class="css-truncate css-truncate-target d-block width-fit">
+                    <a data-pjax="true" title="modified plot scripts" class="link-gray" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/commit/e5588791eaaa4b032ac5484f69dc094cba115ef1">modified plot scripts</a>
+              </span>
+          </div>
+
+          <div role="gridcell" class="text-gray-light text-right" style="width:100px;">
+              <time-ago datetime="2019-11-20T06:33:40Z" class="no-wrap" title="Nov 20, 2019, 2:33 PM GMT+8">13 months ago</time-ago>
+          </div>
+
+        </div>
+        <div role="row" class="Box-row Box-row--focus-gray py-2 d-flex position-relative js-navigation-item">
+          <div role="gridcell" class="mr-3 flex-shrink-0" style="width: 16px;">
+              <svg aria-label="File" class="octicon octicon-file text-gray-light" height="16" viewBox="0 0 16 16" version="1.1" width="16" role="img"><path fill-rule="evenodd" d="M3.75 1.5a.25.25 0 00-.25.25v11.5c0 .138.112.25.25.25h8.5a.25.25 0 00.25-.25V6H9.75A1.75 1.75 0 018 4.25V1.5H3.75zm5.75.56v2.19c0 .138.112.25.25.25h2.19L9.5 2.06zM2 1.75C2 .784 2.784 0 3.75 0h5.086c.464 0 .909.184 1.237.513l3.414 3.414c.329.328.513.773.513 1.237v8.086A1.75 1.75 0 0112.25 15h-8.5A1.75 1.75 0 012 13.25V1.75z"></path></svg>
+
+          </div>
+
+          <div role="rowheader" class="flex-auto min-width-0 col-md-2 mr-3">
+            <span class="css-truncate css-truncate-target d-block width-fit"><a class="js-navigation-open link-gray-dark" title=".gitignore" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/blob/master/.gitignore">.gitignore</a></span>
+          </div>
+
+          <div role="gridcell" class="flex-auto min-width-0 d-none d-md-block col-5 mr-3">
+              <span class="css-truncate css-truncate-target d-block width-fit">
+                    <a data-pjax="true" title="init" class="link-gray" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/commit/2ad80f22b5b37fb296152bf5f6341885e8d9087c">init</a>
+              </span>
+          </div>
+
+          <div role="gridcell" class="text-gray-light text-right" style="width:100px;">
+              <time-ago datetime="2019-02-25T12:28:42Z" class="no-wrap" title="Feb 25, 2019, 8:28 PM GMT+8">2 years ago</time-ago>
+          </div>
+
+        </div>
+        <div role="row" class="Box-row Box-row--focus-gray py-2 d-flex position-relative js-navigation-item">
+          <div role="gridcell" class="mr-3 flex-shrink-0" style="width: 16px;">
+              <svg aria-label="File" class="octicon octicon-file text-gray-light" height="16" viewBox="0 0 16 16" version="1.1" width="16" role="img"><path fill-rule="evenodd" d="M3.75 1.5a.25.25 0 00-.25.25v11.5c0 .138.112.25.25.25h8.5a.25.25 0 00.25-.25V6H9.75A1.75 1.75 0 018 4.25V1.5H3.75zm5.75.56v2.19c0 .138.112.25.25.25h2.19L9.5 2.06zM2 1.75C2 .784 2.784 0 3.75 0h5.086c.464 0 .909.184 1.237.513l3.414 3.414c.329.328.513.773.513 1.237v8.086A1.75 1.75 0 0112.25 15h-8.5A1.75 1.75 0 012 13.25V1.75z"></path></svg>
+
+          </div>
+
+          <div role="rowheader" class="flex-auto min-width-0 col-md-2 mr-3">
+            <span class="css-truncate css-truncate-target d-block width-fit"><a class="js-navigation-open link-gray-dark" title="LICENSE" itemprop="license" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/blob/master/LICENSE">LICENSE</a></span>
+          </div>
+
+          <div role="gridcell" class="flex-auto min-width-0 d-none d-md-block col-5 mr-3">
+              <span class="css-truncate css-truncate-target d-block width-fit">
+                    <a data-pjax="true" title="Initial commit" class="link-gray" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/commit/9a3b4fe699c7b7b91bbd2f40ba58be49f0527ab6">Initial commit</a>
+              </span>
+          </div>
+
+          <div role="gridcell" class="text-gray-light text-right" style="width:100px;">
+              <time-ago datetime="2019-02-25T03:21:43Z" class="no-wrap" title="Feb 25, 2019, 11:21 AM GMT+8">2 years ago</time-ago>
+          </div>
+
+        </div>
+        <div role="row" class="Box-row Box-row--focus-gray py-2 d-flex position-relative js-navigation-item">
+          <div role="gridcell" class="mr-3 flex-shrink-0" style="width: 16px;">
+              <svg aria-label="File" class="octicon octicon-file text-gray-light" height="16" viewBox="0 0 16 16" version="1.1" width="16" role="img"><path fill-rule="evenodd" d="M3.75 1.5a.25.25 0 00-.25.25v11.5c0 .138.112.25.25.25h8.5a.25.25 0 00.25-.25V6H9.75A1.75 1.75 0 018 4.25V1.5H3.75zm5.75.56v2.19c0 .138.112.25.25.25h2.19L9.5 2.06zM2 1.75C2 .784 2.784 0 3.75 0h5.086c.464 0 .909.184 1.237.513l3.414 3.414c.329.328.513.773.513 1.237v8.086A1.75 1.75 0 0112.25 15h-8.5A1.75 1.75 0 012 13.25V1.75z"></path></svg>
+
+          </div>
+
+          <div role="rowheader" class="flex-auto min-width-0 col-md-2 mr-3">
+            <span class="css-truncate css-truncate-target d-block width-fit"><a class="js-navigation-open link-gray-dark" title="README.md" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/blob/master/README.md">README.md</a></span>
+          </div>
+
+          <div role="gridcell" class="flex-auto min-width-0 d-none d-md-block col-5 mr-3">
+              <span class="css-truncate css-truncate-target d-block width-fit">
+                    <a data-pjax="true" title="Update README.md" class="link-gray" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/commit/ba50a82dce412df97f088c572d86d7977753bf74">Update README.md</a>
+              </span>
+          </div>
+
+          <div role="gridcell" class="text-gray-light text-right" style="width:100px;">
+              <time-ago datetime="2020-07-15T05:58:25Z" class="no-wrap" title="Jul 15, 2020, 1:58 PM GMT+8">5 months ago</time-ago>
+          </div>
+
+        </div>
+        <div role="row" class="Box-row Box-row--focus-gray py-2 d-flex position-relative js-navigation-item">
+          <div role="gridcell" class="mr-3 flex-shrink-0" style="width: 16px;">
+              <svg aria-label="File" class="octicon octicon-file text-gray-light" height="16" viewBox="0 0 16 16" version="1.1" width="16" role="img"><path fill-rule="evenodd" d="M3.75 1.5a.25.25 0 00-.25.25v11.5c0 .138.112.25.25.25h8.5a.25.25 0 00.25-.25V6H9.75A1.75 1.75 0 018 4.25V1.5H3.75zm5.75.56v2.19c0 .138.112.25.25.25h2.19L9.5 2.06zM2 1.75C2 .784 2.784 0 3.75 0h5.086c.464 0 .909.184 1.237.513l3.414 3.414c.329.328.513.773.513 1.237v8.086A1.75 1.75 0 0112.25 15h-8.5A1.75 1.75 0 012 13.25V1.75z"></path></svg>
+
+          </div>
+
+          <div role="rowheader" class="flex-auto min-width-0 col-md-2 mr-3">
+            <span class="css-truncate css-truncate-target d-block width-fit"><a class="js-navigation-open link-gray-dark" title="_config.yml" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/blob/master/_config.yml">_config.yml</a></span>
+          </div>
+
+          <div role="gridcell" class="flex-auto min-width-0 d-none d-md-block col-5 mr-3">
+              <span class="css-truncate css-truncate-target d-block width-fit">
+                    <a data-pjax="true" title="Set theme jekyll-theme-cayman" class="link-gray" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/commit/51638bf1a2e0e11511367add5580bb6cf80ff387">Set theme jekyll-theme-cayman</a>
+              </span>
+          </div>
+
+          <div role="gridcell" class="text-gray-light text-right" style="width:100px;">
+              <time-ago datetime="2019-10-17T09:31:23Z" class="no-wrap" title="Oct 17, 2019, 5:31 PM GMT+8">14 months ago</time-ago>
+          </div>
+
+        </div>
+        <div role="row" class="Box-row Box-row--focus-gray py-2 d-flex position-relative js-navigation-item">
+          <div role="gridcell" class="mr-3 flex-shrink-0" style="width: 16px;">
+              <svg aria-label="File" class="octicon octicon-file text-gray-light" height="16" viewBox="0 0 16 16" version="1.1" width="16" role="img"><path fill-rule="evenodd" d="M3.75 1.5a.25.25 0 00-.25.25v11.5c0 .138.112.25.25.25h8.5a.25.25 0 00.25-.25V6H9.75A1.75 1.75 0 018 4.25V1.5H3.75zm5.75.56v2.19c0 .138.112.25.25.25h2.19L9.5 2.06zM2 1.75C2 .784 2.784 0 3.75 0h5.086c.464 0 .909.184 1.237.513l3.414 3.414c.329.328.513.773.513 1.237v8.086A1.75 1.75 0 0112.25 15h-8.5A1.75 1.75 0 012 13.25V1.75z"></path></svg>
+
+          </div>
+
+          <div role="rowheader" class="flex-auto min-width-0 col-md-2 mr-3">
+            <span class="css-truncate css-truncate-target d-block width-fit"><a class="js-navigation-open link-gray-dark" title="requirements.txt" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/blob/master/requirements.txt">requirements.txt</a></span>
+          </div>
+
+          <div role="gridcell" class="flex-auto min-width-0 d-none d-md-block col-5 mr-3">
+              <span class="css-truncate css-truncate-target d-block width-fit">
+                    <a data-pjax="true" title="fix dependence bug" class="link-gray" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/commit/5e68d6284a6297bf0b47749394fd7300a762834a">fix dependence bug</a>
+              </span>
+          </div>
+
+          <div role="gridcell" class="text-gray-light text-right" style="width:100px;">
+              <time-ago datetime="2019-10-12T03:28:48Z" class="no-wrap" title="Oct 12, 2019, 11:28 AM GMT+8">14 months ago</time-ago>
+          </div>
+
+        </div>
+    </div>
+    <div class="Details-content--shown Box-footer d-md-none p-0">
+      <button type="button" class="d-block btn-link js-details-target width-full px-3 py-2" aria-expanded="false">
+        View code
+      </button>
+    </div>
+  </div>
+
+
+
+
+</div>
+
+  <div id="readme" class="Box md js-code-block-container Box--responsive">
+    <div class="Box-header d-flex flex-items-center flex-justify-between bg-white border-bottom-0">
+      <h2 class="Box-title pr-3">
+        README.md
+      </h2>
+    </div>
+        <div class="Popover anim-scale-in js-tagsearch-popover" hidden="" data-tagsearch-url="/leoxiaobin/deep-high-resolution-net.pytorch/find-definition" data-tagsearch-ref="master" data-tagsearch-path="README.md" data-tagsearch-lang="Markdown" data-hydro-click="{&quot;event_type&quot;:&quot;code_navigation.click_on_symbol&quot;,&quot;payload&quot;:{&quot;action&quot;:&quot;click_on_symbol&quot;,&quot;repository_id&quot;:172426938,&quot;ref&quot;:&quot;master&quot;,&quot;language&quot;:&quot;Markdown&quot;,&quot;originating_url&quot;:&quot;https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE&quot;,&quot;user_id&quot;:null}}" data-hydro-click-hmac="2339687cc12f62e62810b68e3db167dc58dba82473f78a505fe962d30bd8161a">
+  <div class="Popover-message Popover-message--large Popover-message--top-left TagsearchPopover mt-1 mb-4 mx-auto Box box-shadow-large">
+    <div class="TagsearchPopover-content js-tagsearch-popover-content overflow-auto" style="will-change:transform;">
+    </div>
+  </div>
+</div>
+
+      <div class="Box-body px-5 pb-5">
+        <article class="markdown-body entry-content container-lg" itemprop="text"><h1><a id="user-content-deep-high-resolution-representation-learning-for-human-pose-estimation-cvpr-2019" class="anchor" aria-hidden="true" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE#deep-high-resolution-representation-learning-for-human-pose-estimation-cvpr-2019"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Deep High-Resolution Representation Learning for Human Pose Estimation (CVPR 2019)</h1>
+<h2><a id="user-content-news" class="anchor" aria-hidden="true" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE#news"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>News</h2>
+<ul>
+<li>[2020/07/05] <a href="https://towardsdatascience.com/overview-of-human-pose-estimation-neural-networks-hrnet-higherhrnet-architectures-and-faq-1954b2f8b249" rel="nofollow">A very nice blog</a> from Towards Data Science introducing HRNet and HigherHRNet for human pose estimation.</li>
+<li>[2020/03/13] A longer version is accepted by TPAMI: <a href="https://arxiv.org/pdf/1908.07919.pdf" rel="nofollow">Deep High-Resolution Representation Learning for Visual Recognition</a>. It includes more HRNet applications, and the codes are available: <a href="https://github.com/HRNet/HRNet-Semantic-Segmentation">semantic segmentation</a>,  <a href="https://github.com/HRNet/HRNet-Object-Detection">objection detection</a>,  <a href="https://github.com/HRNet/HRNet-Facial-Landmark-Detection">facial landmark detection</a>, and <a href="https://github.com/HRNet/HRNet-Image-Classification">image classification</a>.</li>
+<li>[2020/02/01] We have added demo code for HRNet. Thanks <a href="https://github.com/alex9311">Alex Simes</a>.</li>
+<li>Visualization code for showing the pose estimation results. Thanks Depu!</li>
+<li>[2019/08/27] HigherHRNet is now on <a href="https://arxiv.org/abs/1908.10357" rel="nofollow">ArXiv</a>, which is a bottom-up approach for human pose estimation powerd by HRNet. We will also release code and models at <a href="https://github.com/HRNet/Higher-HRNet-Human-Pose-Estimation">Higher-HRNet-Human-Pose-Estimation</a>, stay tuned!</li>
+<li>Our new work <a href="https://arxiv.org/abs/1904.04514" rel="nofollow">High-Resolution Representations for Labeling Pixels and Regions</a> is available at <a href="https://github.com/HRNet">HRNet</a>. Our HRNet has been applied to a wide range of vision tasks, such as <a href="https://github.com/HRNet/HRNet-Image-Classification">image classification</a>, <a href="https://github.com/HRNet/HRNet-Object-Detection">objection detection</a>, <a href="https://github.com/HRNet/HRNet-Semantic-Segmentation">semantic segmentation</a> and <a href="https://github.com/HRNet/HRNet-Facial-Landmark-Detection">facial landmark</a>.</li>
+</ul>
+<h2><a id="user-content-introduction" class="anchor" aria-hidden="true" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE#introduction"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Introduction</h2>
+<p>This is an official pytorch implementation of <a href="https://arxiv.org/abs/1902.09212" rel="nofollow"><em>Deep High-Resolution Representation Learning for Human Pose Estimation</em></a>.
+In this work, we are interested in the human pose estimation problem with a focus on learning reliable high-resolution representations. Most existing methods <strong>recover high-resolution representations from low-resolution representations</strong> produced by a high-to-low resolution network. Instead, our proposed network <strong>maintains high-resolution representations</strong> through the whole process.
+We start from a high-resolution subnetwork as the first stage, gradually add high-to-low resolution subnetworks one by one to form more stages, and connect the mutli-resolution subnetworks <strong>in parallel</strong>. We conduct <strong>repeated multi-scale fusions</strong> such that each of the high-to-low resolution representations receives information from other parallel representations over and over, leading to rich high-resolution representations. As a result, the predicted keypoint heatmap is potentially more accurate and spatially more precise. We empirically demonstrate the effectiveness of our network through the superior pose estimation results over two benchmark datasets: the COCO keypoint detection dataset and the MPII Human Pose dataset. <br></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/blob/master/figures/hrnet.png"><img src="./GitHub - leoxiaobin_deep-high-resolution-net.pytorch_ The project is an official implementation of our CVPR2019 paper _Deep High-Resolution Representation Learning for Human Pose Estimation__files/hrnet.png" alt="Illustrating the architecture of the proposed HRNet" style="max-width:100%;"></a></p>
+<h2><a id="user-content-main-results" class="anchor" aria-hidden="true" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE#main-results"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Main Results</h2>
+<h3><a id="user-content-results-on-mpii-val" class="anchor" aria-hidden="true" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE#results-on-mpii-val"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Results on MPII val</h3>
+<table>
+<thead>
+<tr>
+<th>Arch</th>
+<th>Head</th>
+<th>Shoulder</th>
+<th>Elbow</th>
+<th>Wrist</th>
+<th>Hip</th>
+<th>Knee</th>
+<th>Ankle</th>
+<th>Mean</th>
+<th>Mean@0.1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pose_resnet_50</td>
+<td>96.4</td>
+<td>95.3</td>
+<td>89.0</td>
+<td>83.2</td>
+<td>88.4</td>
+<td>84.0</td>
+<td>79.6</td>
+<td>88.5</td>
+<td>34.0</td>
+</tr>
+<tr>
+<td>pose_resnet_101</td>
+<td>96.9</td>
+<td>95.9</td>
+<td>89.5</td>
+<td>84.4</td>
+<td>88.4</td>
+<td>84.5</td>
+<td>80.7</td>
+<td>89.1</td>
+<td>34.0</td>
+</tr>
+<tr>
+<td>pose_resnet_152</td>
+<td>97.0</td>
+<td>95.9</td>
+<td>90.0</td>
+<td>85.0</td>
+<td>89.2</td>
+<td>85.3</td>
+<td>81.3</td>
+<td>89.6</td>
+<td>35.0</td>
+</tr>
+<tr>
+<td><strong>pose_hrnet_w32</strong></td>
+<td>97.1</td>
+<td>95.9</td>
+<td>90.3</td>
+<td>86.4</td>
+<td>89.1</td>
+<td>87.1</td>
+<td>83.3</td>
+<td>90.3</td>
+<td>37.7</td>
+</tr>
+</tbody>
+</table>
+<h3><a id="user-content-note" class="anchor" aria-hidden="true" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE#note"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Note:</h3>
+<ul>
+<li>Flip test is used.</li>
+<li>Input size is 256x256</li>
+<li>pose_resnet_[50,101,152] is our previous work of <a href="http://openaccess.thecvf.com/content_ECCV_2018/html/Bin_Xiao_Simple_Baselines_for_ECCV_2018_paper.html" rel="nofollow"><em>Simple Baselines for Human Pose Estimation and Tracking</em></a></li>
+</ul>
+<h3><a id="user-content-results-on-coco-val2017-with-detector-having-human-ap-of-564-on-coco-val2017-dataset" class="anchor" aria-hidden="true" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE#results-on-coco-val2017-with-detector-having-human-ap-of-564-on-coco-val2017-dataset"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Results on COCO val2017 with detector having human AP of 56.4 on COCO val2017 dataset</h3>
+<table>
+<thead>
+<tr>
+<th>Arch</th>
+<th>Input size</th>
+<th>#Params</th>
+<th>GFLOPs</th>
+<th>AP</th>
+<th>Ap .5</th>
+<th>AP .75</th>
+<th>AP (M)</th>
+<th>AP (L)</th>
+<th>AR</th>
+<th>AR .5</th>
+<th>AR .75</th>
+<th>AR (M)</th>
+<th>AR (L)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pose_resnet_50</td>
+<td>256x192</td>
+<td>34.0M</td>
+<td>8.9</td>
+<td>0.704</td>
+<td>0.886</td>
+<td>0.783</td>
+<td>0.671</td>
+<td>0.772</td>
+<td>0.763</td>
+<td>0.929</td>
+<td>0.834</td>
+<td>0.721</td>
+<td>0.824</td>
+</tr>
+<tr>
+<td>pose_resnet_50</td>
+<td>384x288</td>
+<td>34.0M</td>
+<td>20.0</td>
+<td>0.722</td>
+<td>0.893</td>
+<td>0.789</td>
+<td>0.681</td>
+<td>0.797</td>
+<td>0.776</td>
+<td>0.932</td>
+<td>0.838</td>
+<td>0.728</td>
+<td>0.846</td>
+</tr>
+<tr>
+<td>pose_resnet_101</td>
+<td>256x192</td>
+<td>53.0M</td>
+<td>12.4</td>
+<td>0.714</td>
+<td>0.893</td>
+<td>0.793</td>
+<td>0.681</td>
+<td>0.781</td>
+<td>0.771</td>
+<td>0.934</td>
+<td>0.840</td>
+<td>0.730</td>
+<td>0.832</td>
+</tr>
+<tr>
+<td>pose_resnet_101</td>
+<td>384x288</td>
+<td>53.0M</td>
+<td>27.9</td>
+<td>0.736</td>
+<td>0.896</td>
+<td>0.803</td>
+<td>0.699</td>
+<td>0.811</td>
+<td>0.791</td>
+<td>0.936</td>
+<td>0.851</td>
+<td>0.745</td>
+<td>0.858</td>
+</tr>
+<tr>
+<td>pose_resnet_152</td>
+<td>256x192</td>
+<td>68.6M</td>
+<td>15.7</td>
+<td>0.720</td>
+<td>0.893</td>
+<td>0.798</td>
+<td>0.687</td>
+<td>0.789</td>
+<td>0.778</td>
+<td>0.934</td>
+<td>0.846</td>
+<td>0.736</td>
+<td>0.839</td>
+</tr>
+<tr>
+<td>pose_resnet_152</td>
+<td>384x288</td>
+<td>68.6M</td>
+<td>35.3</td>
+<td>0.743</td>
+<td>0.896</td>
+<td>0.811</td>
+<td>0.705</td>
+<td>0.816</td>
+<td>0.797</td>
+<td>0.937</td>
+<td>0.858</td>
+<td>0.751</td>
+<td>0.863</td>
+</tr>
+<tr>
+<td><strong>pose_hrnet_w32</strong></td>
+<td>256x192</td>
+<td>28.5M</td>
+<td>7.1</td>
+<td>0.744</td>
+<td>0.905</td>
+<td>0.819</td>
+<td>0.708</td>
+<td>0.810</td>
+<td>0.798</td>
+<td>0.942</td>
+<td>0.865</td>
+<td>0.757</td>
+<td>0.858</td>
+</tr>
+<tr>
+<td><strong>pose_hrnet_w32</strong></td>
+<td>384x288</td>
+<td>28.5M</td>
+<td>16.0</td>
+<td>0.758</td>
+<td>0.906</td>
+<td>0.825</td>
+<td>0.720</td>
+<td>0.827</td>
+<td>0.809</td>
+<td>0.943</td>
+<td>0.869</td>
+<td>0.767</td>
+<td>0.871</td>
+</tr>
+<tr>
+<td><strong>pose_hrnet_w48</strong></td>
+<td>256x192</td>
+<td>63.6M</td>
+<td>14.6</td>
+<td>0.751</td>
+<td>0.906</td>
+<td>0.822</td>
+<td>0.715</td>
+<td>0.818</td>
+<td>0.804</td>
+<td>0.943</td>
+<td>0.867</td>
+<td>0.762</td>
+<td>0.864</td>
+</tr>
+<tr>
+<td><strong>pose_hrnet_w48</strong></td>
+<td>384x288</td>
+<td>63.6M</td>
+<td>32.9</td>
+<td>0.763</td>
+<td>0.908</td>
+<td>0.829</td>
+<td>0.723</td>
+<td>0.834</td>
+<td>0.812</td>
+<td>0.942</td>
+<td>0.871</td>
+<td>0.767</td>
+<td>0.876</td>
+</tr>
+</tbody>
+</table>
+<h3><a id="user-content-note-1" class="anchor" aria-hidden="true" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE#note-1"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Note:</h3>
+<ul>
+<li>Flip test is used.</li>
+<li>Person detector has person AP of 56.4 on COCO val2017 dataset.</li>
+<li>pose_resnet_[50,101,152] is our previous work of <a href="http://openaccess.thecvf.com/content_ECCV_2018/html/Bin_Xiao_Simple_Baselines_for_ECCV_2018_paper.html" rel="nofollow"><em>Simple Baselines for Human Pose Estimation and Tracking</em></a>.</li>
+<li>GFLOPs is for convolution and linear layers only.</li>
+</ul>
+<h3><a id="user-content-results-on-coco-test-dev2017-with-detector-having-human-ap-of-609-on-coco-test-dev2017-dataset" class="anchor" aria-hidden="true" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE#results-on-coco-test-dev2017-with-detector-having-human-ap-of-609-on-coco-test-dev2017-dataset"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Results on COCO test-dev2017 with detector having human AP of 60.9 on COCO test-dev2017 dataset</h3>
+<table>
+<thead>
+<tr>
+<th>Arch</th>
+<th>Input size</th>
+<th>#Params</th>
+<th>GFLOPs</th>
+<th>AP</th>
+<th>Ap .5</th>
+<th>AP .75</th>
+<th>AP (M)</th>
+<th>AP (L)</th>
+<th>AR</th>
+<th>AR .5</th>
+<th>AR .75</th>
+<th>AR (M)</th>
+<th>AR (L)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pose_resnet_152</td>
+<td>384x288</td>
+<td>68.6M</td>
+<td>35.3</td>
+<td>0.737</td>
+<td>0.919</td>
+<td>0.828</td>
+<td>0.713</td>
+<td>0.800</td>
+<td>0.790</td>
+<td>0.952</td>
+<td>0.856</td>
+<td>0.748</td>
+<td>0.849</td>
+</tr>
+<tr>
+<td><strong>pose_hrnet_w48</strong></td>
+<td>384x288</td>
+<td>63.6M</td>
+<td>32.9</td>
+<td>0.755</td>
+<td>0.925</td>
+<td>0.833</td>
+<td>0.719</td>
+<td>0.815</td>
+<td>0.805</td>
+<td>0.957</td>
+<td>0.874</td>
+<td>0.763</td>
+<td>0.863</td>
+</tr>
+<tr>
+<td><strong>pose_hrnet_w48*</strong></td>
+<td>384x288</td>
+<td>63.6M</td>
+<td>32.9</td>
+<td>0.770</td>
+<td>0.927</td>
+<td>0.845</td>
+<td>0.734</td>
+<td>0.831</td>
+<td>0.820</td>
+<td>0.960</td>
+<td>0.886</td>
+<td>0.778</td>
+<td>0.877</td>
+</tr>
+</tbody>
+</table>
+<h3><a id="user-content-note-2" class="anchor" aria-hidden="true" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE#note-2"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Note:</h3>
+<ul>
+<li>Flip test is used.</li>
+<li>Person detector has person AP of 60.9 on COCO test-dev2017 dataset.</li>
+<li>pose_resnet_152 is our previous work of <a href="http://openaccess.thecvf.com/content_ECCV_2018/html/Bin_Xiao_Simple_Baselines_for_ECCV_2018_paper.html" rel="nofollow"><em>Simple Baselines for Human Pose Estimation and Tracking</em></a>.</li>
+<li>GFLOPs is for convolution and linear layers only.</li>
+<li>pose_hrnet_w48* means using additional data from <a href="https://challenger.ai/dataset/keypoint" rel="nofollow">AI challenger</a> for training.</li>
+</ul>
+<h2><a id="user-content-environment" class="anchor" aria-hidden="true" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE#environment"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Environment</h2>
+<p>The code is developed using python 3.6 on Ubuntu 16.04. NVIDIA GPUs are needed. The code is developed and tested using 4 NVIDIA P100 GPU cards. Other platforms or GPU cards are not fully tested.</p>
+<h2><a id="user-content-quick-start" class="anchor" aria-hidden="true" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE#quick-start"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Quick start</h2>
+<h3><a id="user-content-installation" class="anchor" aria-hidden="true" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE#installation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Installation</h3>
+<ol>
+<li>
+<p>Install pytorch &gt;= v1.0.0 following <a href="https://pytorch.org/" rel="nofollow">official instruction</a>.
+<strong>Note that if you use pytorch's version &lt; v1.0.0, you should following the instruction at <a href="https://github.com/Microsoft/human-pose-estimation.pytorch">https://github.com/Microsoft/human-pose-estimation.pytorch</a> to disable cudnn's implementations of BatchNorm layer. We encourage you to use higher pytorch's version(&gt;=v1.0.0)</strong></p>
+</li>
+<li>
+<p>Clone this repo, and we'll call the directory that you cloned as ${POSE_ROOT}.</p>
+</li>
+<li>
+<p>Install dependencies:</p>
+<pre><code>pip install -r requirements.txt
+</code></pre>
+</li>
+<li>
+<p>Make libs:</p>
+<pre><code>cd ${POSE_ROOT}/lib
+make
+</code></pre>
+</li>
+<li>
+<p>Install <a href="https://github.com/cocodataset/cocoapi">COCOAPI</a>:</p>
+<pre><code># COCOAPI=/path/to/clone/cocoapi
+git clone https://github.com/cocodataset/cocoapi.git $COCOAPI
+cd $COCOAPI/PythonAPI
+# Install into global site-packages
+make install
+# Alternatively, if you do not have permissions or prefer
+# not to install the COCO API into global site-packages
+python3 setup.py install --user
+</code></pre>
+<p>Note that instructions like # COCOAPI=/path/to/install/cocoapi indicate that you should pick a path where you'd like to have the software cloned and then set an environment variable (COCOAPI in this case) accordingly.</p>
+</li>
+<li>
+<p>Init output(training model output directory) and log(tensorboard log directory) directory:</p>
+<pre><code>mkdir output 
+mkdir log
+</code></pre>
+<p>Your directory tree should look like this:</p>
+<pre><code>${POSE_ROOT}
+├── data
+├── experiments
+├── lib
+├── log
+├── models
+├── output
+├── tools 
+├── README.md
+└── requirements.txt
+</code></pre>
+</li>
+<li>
+<p>Download pretrained models from our model zoo(<a href="https://drive.google.com/drive/folders/1hOTihvbyIxsm5ygDpbUuJ7O_tzv4oXjC?usp=sharing" rel="nofollow">GoogleDrive</a> or <a href="https://1drv.ms/f/s!AhIXJn_J-blW231MH2krnmLq5kkQ" rel="nofollow">OneDrive</a>)</p>
+<pre><code>${POSE_ROOT}
+ `-- models
+     `-- pytorch
+         |-- imagenet
+         |   |-- hrnet_w32-36af842e.pth
+         |   |-- hrnet_w48-8ef0771d.pth
+         |   |-- resnet50-19c8e357.pth
+         |   |-- resnet101-5d3b4d8f.pth
+         |   `-- resnet152-b121ed2d.pth
+         |-- pose_coco
+         |   |-- pose_hrnet_w32_256x192.pth
+         |   |-- pose_hrnet_w32_384x288.pth
+         |   |-- pose_hrnet_w48_256x192.pth
+         |   |-- pose_hrnet_w48_384x288.pth
+         |   |-- pose_resnet_101_256x192.pth
+         |   |-- pose_resnet_101_384x288.pth
+         |   |-- pose_resnet_152_256x192.pth
+         |   |-- pose_resnet_152_384x288.pth
+         |   |-- pose_resnet_50_256x192.pth
+         |   `-- pose_resnet_50_384x288.pth
+         `-- pose_mpii
+             |-- pose_hrnet_w32_256x256.pth
+             |-- pose_hrnet_w48_256x256.pth
+             |-- pose_resnet_101_256x256.pth
+             |-- pose_resnet_152_256x256.pth
+             `-- pose_resnet_50_256x256.pth
+
+</code></pre>
+</li>
+</ol>
+<h3><a id="user-content-data-preparation" class="anchor" aria-hidden="true" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE#data-preparation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Data preparation</h3>
+<p><strong>For MPII data</strong>, please download from <a href="http://human-pose.mpi-inf.mpg.de/" rel="nofollow">MPII Human Pose Dataset</a>. The original annotation files are in matlab format. We have converted them into json format, you also need to download them from <a href="https://1drv.ms/f/s!AhIXJn_J-blW00SqrairNetmeVu4" rel="nofollow">OneDrive</a> or <a href="https://drive.google.com/drive/folders/1En_VqmStnsXMdldXA6qpqEyDQulnmS3a?usp=sharing" rel="nofollow">GoogleDrive</a>.
+Extract them under {POSE_ROOT}/data, and make them look like this:</p>
+<pre><code>${POSE_ROOT}
+|-- data
+`-- |-- mpii
+    `-- |-- annot
+        |   |-- gt_valid.mat
+        |   |-- test.json
+        |   |-- train.json
+        |   |-- trainval.json
+        |   `-- valid.json
+        `-- images
+            |-- 000001163.jpg
+            |-- 000003072.jpg
+</code></pre>
+<p><strong>For COCO data</strong>, please download from <a href="http://cocodataset.org/#download" rel="nofollow">COCO download</a>, 2017 Train/Val is needed for COCO keypoints training and validation. We also provide person detection result of COCO val2017 and test-dev2017 to reproduce our multi-person pose estimation results. Please download from <a href="https://1drv.ms/f/s!AhIXJn_J-blWzzDXoz5BeFl8sWM-" rel="nofollow">OneDrive</a> or <a href="https://drive.google.com/drive/folders/1fRUDNUDxe9fjqcRZ2bnF_TKMlO0nB_dk?usp=sharing" rel="nofollow">GoogleDrive</a>.
+Download and extract them under {POSE_ROOT}/data, and make them look like this:</p>
+<pre><code>${POSE_ROOT}
+|-- data
+`-- |-- coco
+    `-- |-- annotations
+        |   |-- person_keypoints_train2017.json
+        |   `-- person_keypoints_val2017.json
+        |-- person_detection_results
+        |   |-- COCO_val2017_detections_AP_H_56_person.json
+        |   |-- COCO_test-dev2017_detections_AP_H_609_person.json
+        `-- images
+            |-- train2017
+            |   |-- 000000000009.jpg
+            |   |-- 000000000025.jpg
+            |   |-- 000000000030.jpg
+            |   |-- ... 
+            `-- val2017
+                |-- 000000000139.jpg
+                |-- 000000000285.jpg
+                |-- 000000000632.jpg
+                |-- ... 
+</code></pre>
+<h3><a id="user-content-training-and-testing" class="anchor" aria-hidden="true" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE#training-and-testing"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Training and Testing</h3>
+<h4><a id="user-content-testing-on-mpii-dataset-using-model-zoos-modelsgoogledrive-or-onedrive" class="anchor" aria-hidden="true" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE#testing-on-mpii-dataset-using-model-zoos-modelsgoogledrive-or-onedrive"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Testing on MPII dataset using model zoo's models(<a href="https://drive.google.com/drive/folders/1hOTihvbyIxsm5ygDpbUuJ7O_tzv4oXjC?usp=sharing" rel="nofollow">GoogleDrive</a> or <a href="https://1drv.ms/f/s!AhIXJn_J-blW231MH2krnmLq5kkQ" rel="nofollow">OneDrive</a>)</h4>
+<pre><code>python tools/test.py \
+    --cfg experiments/mpii/hrnet/w32_256x256_adam_lr1e-3.yaml \
+    TEST.MODEL_FILE models/pytorch/pose_mpii/pose_hrnet_w32_256x256.pth
+</code></pre>
+<h4><a id="user-content-training-on-mpii-dataset" class="anchor" aria-hidden="true" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE#training-on-mpii-dataset"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Training on MPII dataset</h4>
+<pre><code>python tools/train.py \
+    --cfg experiments/mpii/hrnet/w32_256x256_adam_lr1e-3.yaml
+</code></pre>
+<h4><a id="user-content-testing-on-coco-val2017-dataset-using-model-zoos-modelsgoogledrive-or-onedrive" class="anchor" aria-hidden="true" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE#testing-on-coco-val2017-dataset-using-model-zoos-modelsgoogledrive-or-onedrive"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Testing on COCO val2017 dataset using model zoo's models(<a href="https://drive.google.com/drive/folders/1hOTihvbyIxsm5ygDpbUuJ7O_tzv4oXjC?usp=sharing" rel="nofollow">GoogleDrive</a> or <a href="https://1drv.ms/f/s!AhIXJn_J-blW231MH2krnmLq5kkQ" rel="nofollow">OneDrive</a>)</h4>
+<pre><code>python tools/test.py \
+    --cfg experiments/coco/hrnet/w32_256x192_adam_lr1e-3.yaml \
+    TEST.MODEL_FILE models/pytorch/pose_coco/pose_hrnet_w32_256x192.pth \
+    TEST.USE_GT_BBOX False
+</code></pre>
+<h4><a id="user-content-training-on-coco-train2017-dataset" class="anchor" aria-hidden="true" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE#training-on-coco-train2017-dataset"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Training on COCO train2017 dataset</h4>
+<pre><code>python tools/train.py \
+    --cfg experiments/coco/hrnet/w32_256x192_adam_lr1e-3.yaml \
+</code></pre>
+<h3><a id="user-content-visualization" class="anchor" aria-hidden="true" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE#visualization"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Visualization</h3>
+<h4><a id="user-content-visualizing-predictions-on-coco-val" class="anchor" aria-hidden="true" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE#visualizing-predictions-on-coco-val"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Visualizing predictions on COCO val</h4>
+<pre><code>python visualization/plot_coco.py \
+    --prediction output/coco/w48_384x288_adam_lr1e-3/results/keypoints_val2017_results_0.json \
+    --save-path visualization/results
+
+</code></pre>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/blob/master/figures/visualization/coco/score_610_id_2685_000000002685.png"><img src="./GitHub - leoxiaobin_deep-high-resolution-net.pytorch_ The project is an official implementation of our CVPR2019 paper _Deep High-Resolution Representation Learning for Human Pose Estimation__files/score_610_id_2685_000000002685.png" height="215" style="max-width:100%;"></a><a target="_blank" rel="noopener noreferrer" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/blob/master/figures/visualization/coco/score_710_id_153229_000000153229.png"><img src="./GitHub - leoxiaobin_deep-high-resolution-net.pytorch_ The project is an official implementation of our CVPR2019 paper _Deep High-Resolution Representation Learning for Human Pose Estimation__files/score_710_id_153229_00000015322.png" height="215" style="max-width:100%;"></a><a target="_blank" rel="noopener noreferrer" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/blob/master/figures/visualization/coco/score_755_id_343561_000000343561.png"><img src="./GitHub - leoxiaobin_deep-high-resolution-net.pytorch_ The project is an official implementation of our CVPR2019 paper _Deep High-Resolution Representation Learning for Human Pose Estimation__files/score_755_id_343561_00000034356.png" height="215" style="max-width:100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/blob/master/figures/visualization/coco/score_755_id_559842_000000559842.png"><img src="./GitHub - leoxiaobin_deep-high-resolution-net.pytorch_ The project is an official implementation of our CVPR2019 paper _Deep High-Resolution Representation Learning for Human Pose Estimation__files/score_755_id_559842_00000055984.png" height="209" style="max-width:100%;"></a><a target="_blank" rel="noopener noreferrer" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/blob/master/figures/visualization/coco/score_770_id_6954_000000006954.png"><img src="./GitHub - leoxiaobin_deep-high-resolution-net.pytorch_ The project is an official implementation of our CVPR2019 paper _Deep High-Resolution Representation Learning for Human Pose Estimation__files/score_770_id_6954_000000006954.png" height="209" style="max-width:100%;"></a><a target="_blank" rel="noopener noreferrer" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/blob/master/figures/visualization/coco/score_919_id_53626_000000053626.png"><img src="./GitHub - leoxiaobin_deep-high-resolution-net.pytorch_ The project is an official implementation of our CVPR2019 paper _Deep High-Resolution Representation Learning for Human Pose Estimation__files/score_919_id_53626_000000053626.png" height="209" style="max-width:100%;"></a></p>
+<h3><a id="user-content-other-applications" class="anchor" aria-hidden="true" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE#other-applications"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Other applications</h3>
+<p>Many other dense prediction tasks, such as segmentation, face alignment and object detection, etc. have been benefited by HRNet. More information can be found at <a href="https://github.com/HRNet">High-Resolution Networks</a>.</p>
+<h3><a id="user-content-other-implementation" class="anchor" aria-hidden="true" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE#other-implementation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Other implementation</h3>
+<p><a href="https://github.com/open-mmlab/mmpose">mmpose</a></p>
+<h3><a id="user-content-citation" class="anchor" aria-hidden="true" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE#citation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Citation</h3>
+<p>If you use our code or models in your research, please cite with:</p>
+<pre><code>@inproceedings{sun2019deep,
+  title={Deep High-Resolution Representation Learning for Human Pose Estimation},
+  author={Sun, Ke and Xiao, Bin and Liu, Dong and Wang, Jingdong},
+  booktitle={CVPR},
+  year={2019}
+}
+
+@inproceedings{xiao2018simple,
+    author={Xiao, Bin and Wu, Haiping and Wei, Yichen},
+    title={Simple Baselines for Human Pose Estimation and Tracking},
+    booktitle = {European Conference on Computer Vision (ECCV)},
+    year = {2018}
+}
+
+@article{WangSCJDZLMTWLX19,
+  title={Deep High-Resolution Representation Learning for Visual Recognition},
+  author={Jingdong Wang and Ke Sun and Tianheng Cheng and 
+          Borui Jiang and Chaorui Deng and Yang Zhao and Dong Liu and Yadong Mu and 
+          Mingkui Tan and Xinggang Wang and Wenyu Liu and Bin Xiao},
+  journal   = {TPAMI}
+  year={2019}
+}
+</code></pre>
+</article>
+      </div>
+  </div>
+
+
+</div>
+    <div class="flex-shrink-0 col-12 col-md-3">
+            
+
+      <div class="BorderGrid BorderGrid--spacious" data-pjax="">
+        <div class="BorderGrid-row hide-sm hide-md">
+          <div class="BorderGrid-cell">
+            <h2 class="mb-3 h4">About</h2>
+
+    <p class="f4 mt-3">
+      The project is an official implementation of our CVPR2019 paper "Deep High-Resolution Representation Learning for Human Pose Estimation"
+    </p>
+    <div class="mt-3 d-flex flex-items-center">
+      <svg class="octicon octicon-link flex-shrink-0 mr-2" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg>
+      <span class="flex-auto min-width-0 css-truncate css-truncate-target width-fit">
+        <a title="https://jingdongwang2017.github.io/Projects/HRNet/PoseEstimation.html" role="link" target="_blank" class="text-bold" rel="noopener noreferrer" href="https://jingdongwang2017.github.io/Projects/HRNet/PoseEstimation.html">jingdongwang2017.github.io/projects/hrnet/poseestimation.html</a>
+      </span>
+    </div>
+
+  <h3 class="sr-only">Topics</h3>
+  <div class="mt-3">
+      <div class="f6">
+      <a data-ga-click="Topic, repository page" data-octo-click="topic_click" data-octo-dimensions="topic:human-pose-estimation" href="https://github.com/topics/human-pose-estimation" title="Topic: human-pose-estimation" class="topic-tag topic-tag-link ">
+  human-pose-estimation
+</a>
+      <a data-ga-click="Topic, repository page" data-octo-click="topic_click" data-octo-dimensions="topic:deep-learning" href="https://github.com/topics/deep-learning" title="Topic: deep-learning" class="topic-tag topic-tag-link ">
+  deep-learning
+</a>
+      <a data-ga-click="Topic, repository page" data-octo-click="topic_click" data-octo-dimensions="topic:coco-keypoints-detection" href="https://github.com/topics/coco-keypoints-detection" title="Topic: coco-keypoints-detection" class="topic-tag topic-tag-link ">
+  coco-keypoints-detection
+</a>
+      <a data-ga-click="Topic, repository page" data-octo-click="topic_click" data-octo-dimensions="topic:mpii-dataset" href="https://github.com/topics/mpii-dataset" title="Topic: mpii-dataset" class="topic-tag topic-tag-link ">
+  mpii-dataset
+</a>
+      <a data-ga-click="Topic, repository page" data-octo-click="topic_click" data-octo-dimensions="topic:mpii" href="https://github.com/topics/mpii" title="Topic: mpii" class="topic-tag topic-tag-link ">
+  mpii
+</a>
+      <a data-ga-click="Topic, repository page" data-octo-click="topic_click" data-octo-dimensions="topic:mscoco-keypoint" href="https://github.com/topics/mscoco-keypoint" title="Topic: mscoco-keypoint" class="topic-tag topic-tag-link ">
+  mscoco-keypoint
+</a>
+      <a data-ga-click="Topic, repository page" data-octo-click="topic_click" data-octo-dimensions="topic:deep-high-resolution-net" href="https://github.com/topics/deep-high-resolution-net" title="Topic: deep-high-resolution-net" class="topic-tag topic-tag-link ">
+  deep-high-resolution-net
+</a>
+      <a data-ga-click="Topic, repository page" data-octo-click="topic_click" data-octo-dimensions="topic:high-resolution-net" href="https://github.com/topics/high-resolution-net" title="Topic: high-resolution-net" class="topic-tag topic-tag-link ">
+  high-resolution-net
+</a>
+  </div>
+
+  </div>
+
+  <h3 class="sr-only">Resources</h3>
+  <div class="mt-3">
+    <a class="muted-link" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE#readme">
+      <svg class="octicon octicon-book mr-2" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 1.75A.75.75 0 01.75 1h4.253c1.227 0 2.317.59 3 1.501A3.744 3.744 0 0111.006 1h4.245a.75.75 0 01.75.75v10.5a.75.75 0 01-.75.75h-4.507a2.25 2.25 0 00-1.591.659l-.622.621a.75.75 0 01-1.06 0l-.622-.621A2.25 2.25 0 005.258 13H.75a.75.75 0 01-.75-.75V1.75zm8.755 3a2.25 2.25 0 012.25-2.25H14.5v9h-3.757c-.71 0-1.4.201-1.992.572l.004-7.322zm-1.504 7.324l.004-5.073-.002-2.253A2.25 2.25 0 005.003 2.5H1.5v9h3.757a3.75 3.75 0 011.994.574z"></path></svg>
+      Readme
+</a>  </div>
+
+  <h3 class="sr-only">License</h3>
+  <div class="mt-3">
+    <a href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/blob/master/LICENSE" class="muted-link">
+      <svg class="octicon octicon-law mr-2" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.75.75a.75.75 0 00-1.5 0V2h-.984c-.305 0-.604.08-.869.23l-1.288.737A.25.25 0 013.984 3H1.75a.75.75 0 000 1.5h.428L.066 9.192a.75.75 0 00.154.838l.53-.53-.53.53v.001l.002.002.002.002.006.006.016.015.045.04a3.514 3.514 0 00.686.45A4.492 4.492 0 003 11c.88 0 1.556-.22 2.023-.454a3.515 3.515 0 00.686-.45l.045-.04.016-.015.006-.006.002-.002.001-.002L5.25 9.5l.53.53a.75.75 0 00.154-.838L3.822 4.5h.162c.305 0 .604-.08.869-.23l1.289-.737a.25.25 0 01.124-.033h.984V13h-2.5a.75.75 0 000 1.5h6.5a.75.75 0 000-1.5h-2.5V3.5h.984a.25.25 0 01.124.033l1.29.736c.264.152.563.231.868.231h.162l-2.112 4.692a.75.75 0 00.154.838l.53-.53-.53.53v.001l.002.002.002.002.006.006.016.015.045.04a3.517 3.517 0 00.686.45A4.492 4.492 0 0013 11c.88 0 1.556-.22 2.023-.454a3.512 3.512 0 00.686-.45l.045-.04.01-.01.006-.005.006-.006.002-.002.001-.002-.529-.531.53.53a.75.75 0 00.154-.838L13.823 4.5h.427a.75.75 0 000-1.5h-2.234a.25.25 0 01-.124-.033l-1.29-.736A1.75 1.75 0 009.735 2H8.75V.75zM1.695 9.227c.285.135.718.273 1.305.273s1.02-.138 1.305-.273L3 6.327l-1.305 2.9zm10 0c.285.135.718.273 1.305.273s1.02-.138 1.305-.273L13 6.327l-1.305 2.9z"></path></svg>
+        MIT License
+    </a>
+  </div>
+
+          </div>
+        </div>
+          <div class="BorderGrid-row">
+            <div class="BorderGrid-cell">
+              <h2 class="h4 mb-3">
+  <a href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/releases" class="link-gray-dark no-underline ">
+    Releases
+</a></h2>
+
+    <div class="text-small color-text-secondary">No releases published</div>
+
+            </div>
+          </div>
+          <div class="BorderGrid-row">
+            <div class="BorderGrid-cell">
+              <h2 class="h4 mb-3">
+  <a href="https://github.com/users/leoxiaobin/packages?repo_name=deep-high-resolution-net.pytorch" class="link-gray-dark no-underline ">
+    Packages <span title="0" hidden="hidden" class="Counter ">0</span>
+</a></h2>
+
+
+      <div class="text-small color-text-secondary">
+        No packages published <br>
+      </div>
+
+
+
+            </div>
+          </div>
+          <div class="BorderGrid-row" hidden="">
+            <div class="BorderGrid-cell">
+              
+
+
+            </div>
+          </div>
+          <div class="BorderGrid-row">
+            <div class="BorderGrid-cell">
+              <h2 class="h4 mb-3">
+  <a href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/graphs/contributors" class="link-gray-dark no-underline ">
+    Contributors <span title="7" class="Counter ">7</span>
+</a></h2>
+
+
+    
+  <ul class="list-style-none d-flex flex-wrap mb-n2">
+      <li class="mb-2 mr-2">
+        <a class="" data-hovercard-type="user" data-hovercard-url="/users/leoxiaobin/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/leoxiaobin">
+          <img class="d-block avatar-user" src="./GitHub - leoxiaobin_deep-high-resolution-net.pytorch_ The project is an official implementation of our CVPR2019 paper _Deep High-Resolution Representation Learning for Human Pose Estimation__files/5362509(1)" width="32" height="32" alt="@leoxiaobin">
+</a>      </li>
+      <li class="mb-2 mr-2">
+        <a class="" data-hovercard-type="user" data-hovercard-url="/users/welleast/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/welleast">
+          <img class="d-block avatar-user" src="./GitHub - leoxiaobin_deep-high-resolution-net.pytorch_ The project is an official implementation of our CVPR2019 paper _Deep High-Resolution Representation Learning for Human Pose Estimation__files/17076122" width="32" height="32" alt="@welleast">
+</a>      </li>
+      <li class="mb-2 mr-2">
+        <a class="" data-hovercard-type="user" data-hovercard-url="/users/alex9311/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/alex9311">
+          <img class="d-block avatar-user" src="./GitHub - leoxiaobin_deep-high-resolution-net.pytorch_ The project is an official implementation of our CVPR2019 paper _Deep High-Resolution Representation Learning for Human Pose Estimation__files/1326899" width="32" height="32" alt="@alex9311">
+</a>      </li>
+      <li class="mb-2 mr-2">
+        <a class="" data-hovercard-type="user" data-hovercard-url="/users/gachiemchiep/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/gachiemchiep">
+          <img class="d-block avatar-user" src="./GitHub - leoxiaobin_deep-high-resolution-net.pytorch_ The project is an official implementation of our CVPR2019 paper _Deep High-Resolution Representation Learning for Human Pose Estimation__files/2300329" width="32" height="32" alt="@gachiemchiep">
+</a>      </li>
+      <li class="mb-2 mr-2">
+        <a class="" data-hovercard-type="user" data-hovercard-url="/users/sunke123/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/sunke123">
+          <img class="d-block avatar-user" src="./GitHub - leoxiaobin_deep-high-resolution-net.pytorch_ The project is an official implementation of our CVPR2019 paper _Deep High-Resolution Representation Learning for Human Pose Estimation__files/11239351" width="32" height="32" alt="@sunke123">
+</a>      </li>
+      <li class="mb-2 mr-2">
+        <a class="" data-hovercard-type="user" data-hovercard-url="/users/NickVeld/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/NickVeld">
+          <img class="d-block avatar-user" src="./GitHub - leoxiaobin_deep-high-resolution-net.pytorch_ The project is an official implementation of our CVPR2019 paper _Deep High-Resolution Representation Learning for Human Pose Estimation__files/17028401" width="32" height="32" alt="@NickVeld">
+</a>      </li>
+      <li class="mb-2 mr-2">
+        <a class="" data-hovercard-type="user" data-hovercard-url="/users/GongXinyuu/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="https://github.com/GongXinyuu">
+          <img class="d-block avatar-user" src="./GitHub - leoxiaobin_deep-high-resolution-net.pytorch_ The project is an official implementation of our CVPR2019 paper _Deep High-Resolution Representation Learning for Human Pose Estimation__files/20336084" width="32" height="32" alt="@GongXinyuu">
+</a>      </li>
+  </ul>
+
+
+
+            </div>
+          </div>
+          <div class="BorderGrid-row">
+            <div class="BorderGrid-cell">
+              <h2 class="h4 mb-3">Languages</h2>
+<div class="mb-2">
+  <span class="Progress ">
+    <span itemprop="keywords" aria-label="Cuda 67.8" style="background-color: #3A4E3A;width: 67.8%;" class="Progress-item "></span>
+    <span itemprop="keywords" aria-label="Python 32.2" style="background-color: #3572A5;width: 32.2%;" class="Progress-item "></span>
+</span></div>
+<ul class="list-style-none">
+    <li class="d-inline">
+      <a class="d-inline-flex flex-items-center flex-nowrap link-gray no-underline text-small mr-3" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/search?l=cuda" data-ga-click="Repository, language stats search click, location:repo overview">
+        <svg class="octicon octicon-dot-fill mr-2" style="color:#3A4E3A;" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"></path></svg>
+        <span class="text-gray-dark text-bold mr-1">Cuda</span>
+        <span>67.8%</span>
+      </a>
+    </li>
+    <li class="d-inline">
+      <a class="d-inline-flex flex-items-center flex-nowrap link-gray no-underline text-small mr-3" href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch/search?l=python" data-ga-click="Repository, language stats search click, location:repo overview">
+        <svg class="octicon octicon-dot-fill mr-2" style="color:#3572A5;" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"></path></svg>
+        <span class="text-gray-dark text-bold mr-1">Python</span>
+        <span>32.2%</span>
+      </a>
+    </li>
+</ul>
+
+            </div>
+          </div>
+      </div>
+
+</div></div>
+
+  </div>
+</div>
+
+    </main>
+  </div>
+
+  </div>
+
+          
+<div class="footer container-xl width-full p-responsive" role="contentinfo">
+    <div class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between flex-sm-items-center pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+      <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mr-lg-4" href="https://github.com/">
+        <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24" aria-hidden="true"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+</a>
+      <ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+        <li class="mr-3 mr-lg-0">© 2020 GitHub, Inc.</li>
+          <li class="mr-3 mr-lg-0"><a data-ga-click="Footer, go to terms, text:terms" href="https://github.com/site/terms">Terms</a></li>
+          <li class="mr-3 mr-lg-0"><a data-ga-click="Footer, go to privacy, text:privacy" href="https://github.com/site/privacy">Privacy</a></li>
+            <li class="js-cookie-consent-preferences-link-container mr-3 mr-lg-0" hidden="hidden">
+  <button data-ga-click="Footer, go to cookie preferences, text:cookie preferences" class="btn-link js-cookie-consent-preferences-link" type="button">Cookie Preferences</button>
+</li>
+          <li class="mr-3 mr-lg-0"><a data-ga-click="Footer, go to security, text:security" href="https://github.com/security">Security</a></li>
+          <li class="mr-3 mr-lg-0"><a href="https://githubstatus.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+          <li class="mr-3 mr-lg-0"><a data-ga-click="Footer, go to help, text:help" href="https://docs.github.com/">Help</a></li>
+          <li class="mr-3 mr-lg-0"><a data-ga-click="Footer, go to contact, text:contact" href="https://github.com/contact">Contact GitHub</a></li>
+          <li class="mr-3 mr-lg-0"><a href="https://github.com/pricing" data-ga-click="Footer, go to Pricing, text:Pricing">Pricing</a></li>
+        <li class="mr-3 mr-lg-0"><a href="https://docs.github.com/" data-ga-click="Footer, go to api, text:api">API</a></li>
+        <li class="mr-3 mr-lg-0"><a href="https://services.github.com/" data-ga-click="Footer, go to training, text:training">Training</a></li>
+          <li class="mr-3 mr-lg-0"><a href="https://github.blog/" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+          <li class="mr-3 mr-lg-0"><a data-ga-click="Footer, go to about, text:about" href="https://github.com/about">About</a></li>
+      </ul>
+    </div>
+  <div class="d-flex flex-justify-center pb-6">
+    <span class="f6 text-gray-light"></span>
+  </div>
+
+  
+</div>
+
+
+
+  <div id="ajax-error-message" class="ajax-error-message flash flash-error">
+    <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path></svg>
+    <button type="button" class="flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+      <svg class="octicon octicon-x" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path></svg>
+    </button>
+    You can’t perform that action at this time.
+  </div>
+
+
+  <div class="js-stale-session-flash flash flash-warn flash-banner" hidden="">
+    <svg class="octicon octicon-alert" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.22 1.754a.25.25 0 00-.44 0L1.698 13.132a.25.25 0 00.22.368h12.164a.25.25 0 00.22-.368L8.22 1.754zm-1.763-.707c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0114.082 15H1.918a1.75 1.75 0 01-1.543-2.575L6.457 1.047zM9 11a1 1 0 11-2 0 1 1 0 012 0zm-.25-5.25a.75.75 0 00-1.5 0v2.5a.75.75 0 001.5 0v-2.5z"></path></svg>
+    <span class="js-stale-session-flash-signed-in" hidden="">You signed in with another tab or window. <a href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE">Reload</a> to refresh your session.</span>
+    <span class="js-stale-session-flash-signed-out" hidden="">You signed out in another tab or window. <a href="https://github.com/leoxiaobin/deep-high-resolution-net.pytorch?fbclid=IwAR1ijSxB8Z7EUat4JjNz_i1Nxa5vXvd7Whiyn8saPSunFCGREtQ_NPEeMkE">Reload</a> to refresh your session.</span>
+  </div>
+    <template id="site-details-dialog"></template>
+
+    <div class="Popover js-hovercard-content position-absolute" style="display: none; outline: none;" tabindex="0">
+  <div class="Popover-message Popover-message--bottom-left Popover-message--large Box box-shadow-large" style="width:360px;"></div>
+</div>
+
+      <div class="js-cookie-consent-banner" hidden="">
+  <div class="hx_cookie-banner p-2 p-sm-3 p-md-4">
+    <div style="max-width: 1194px;" class="Box hx_cookie-banner-box box-shadow-medium mx-auto">
+    <div class="Box-body border-0 py-0 px-3 px-md-4">
+      <div class="js-main-cookie-banner hx_cookie-banner-main">
+          <div class="d-md-flex flex-items-center py-3">
+            <p class="f5 flex-1 mb-3 mb-md-0">
+              
+  We use <span class="text-bold">optional</span> third-party analytics cookies to understand how you use GitHub.com so we can build better products.
+
+              <span class="btn-link js-cookie-consent-learn-more">Learn more</span>.
+            </p>
+            <div class="d-flex d-md-block flex-wrap flex-sm-nowrap">
+              <button class="btn btn-outline flex-1 mr-1 mx-sm-1 m-md-0 ml-md-2 js-cookie-consent-accept">Accept</button>
+              <button class="btn btn-outline flex-1 ml-1 m-md-0 ml-md-2 js-cookie-consent-reject">Reject</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="js-cookie-details hx_cookie-banner-details" hidden="">
+          <div class="d-md-flex flex-items-center py-3">
+            <p class="f5 flex-1 mb-2 mb-md-0">
+              
+  We use <span class="text-bold">optional</span> third-party analytics cookies to understand how you use GitHub.com so we can build better products.
+
+              <br>
+              You can always update your selection by clicking <span class="text-bold">Cookie Preferences</span> at the bottom of the page.
+              For more information, see our <a href="https://docs.github.com/en/free-pro-team@latest/github/site-policy/github-privacy-statement">Privacy Statement</a>.
+            </p>
+          </div>
+
+          <div class="d-md-flex flex-items-center py-3 border-top">
+            <div class="f5 flex-1 mb-2 mb-md-0">
+              <h5 class="mb-1">Essential cookies</h5>
+              <p class="f6 mb-md-0">We use essential cookies to perform essential website functions, e.g. they're used to log you in. 
+                <a href="https://docs.github.com/en/github/site-policy/github-subprocessors-and-cookies">Learn more</a>
+              </p>
+            </div>
+            <div class="text-right">
+              <h5 class="text-blue">Always active</h5>
+            </div>
+          </div>
+
+          <div class="d-md-flex flex-items-center py-3 border-top">
+            <div class="f5 flex-1 mb-2 mb-md-0">
+              <h5 class="mb-1">Analytics cookies</h5>
+              <p class="f6 mb-md-0">We use analytics cookies to understand how you use our websites so we can make them better, e.g. they're used to gather information about the pages you visit and how many clicks you need to accomplish a task. 
+                <a href="https://docs.github.com/en/github/site-policy/github-subprocessors-and-cookies">Learn more</a>
+              </p>
+            </div>
+            <div class="text-right">
+              <div class="BtnGroup mt-1 mt-md-0 ml-2">
+                <button class="btn btn-outline BtnGroup-item js-accept-analytics-cookies" type="button">Accept</button>
+                <button class="btn btn-outline BtnGroup-item js-reject-analytics-cookies" type="button">Reject</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-right py-3 border-top">
+            <button class="btn btn-primary js-save-cookie-preferences" type="button" disabled="">Save preferences</button>
+          </div>
+        </div>
+</div></div>  </div>
+</div>
+
+
+  
+
+
+<div aria-live="polite" class="sr-only"></div></body></html>

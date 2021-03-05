@@ -1,0 +1,73 @@
+all :
+Val PCK @, 0.5 , total : 0.0 , count: 44239
+Tra PCK @, 0.5 , total : 0.0 , count: 4443
+Val PCK @, 0.5 , ankle : 0.0 , count: 4234
+Tra PCK @, 0.5 , ankle : 0.0 , count: 392
+Val PCK @, 0.5 , knee : 0.0 , count: 4963
+Tra PCK @, 0.5 , knee : 0.0 , count: 499
+Val PCK @, 0.5 , hip : 0.0 , count: 5777
+Tra PCK @, 0.5 , hip : 0.0 , count: 587
+Val PCK @, 0.5 , pelvis : 0.0 , count: 2878
+Tra PCK @, 0.5 , pelvis : 0.0 , count: 293
+Val PCK @, 0.5 , thorax : 0.0 , count: 2932
+Tra PCK @, 0.5 , thorax : 0.0 , count: 298
+Val PCK @, 0.5 , neck : 0.0 , count: 2932
+Tra PCK @, 0.5 , neck : 0.0 , count: 298
+Val PCK @, 0.5 , head : 0.0 , count: 2931
+Tra PCK @, 0.5 , head : 0.0 , count: 297
+Val PCK @, 0.5 , wrist : 0.0 , count: 5837
+Tra PCK @, 0.5 , wrist : 0.0 , count: 589
+Val PCK @, 0.5 , elbow : 0.0 , count: 5867
+Tra PCK @, 0.5 , elbow : 0.0 , count: 592
+Val PCK @, 0.5 , shoulder : 0.0 , count: 5888
+Tra PCK @, 0.5 , shoulder : 0.0 , count: 598
+
+
+visible :
+Val PCK @, 0.5 , total : 0.0 , count: 33996
+Tra PCK @, 0.5 , total : 0.0 , count: 3879
+Val PCK @, 0.5 , ankle : 0.0 , count: 3177
+Tra PCK @, 0.5 , ankle : 0.0 , count: 340
+Val PCK @, 0.5 , knee : 0.0 , count: 3854
+Tra PCK @, 0.5 , knee : 0.0 , count: 448
+Val PCK @, 0.5 , hip : 0.0 , count: 4206
+Tra PCK @, 0.5 , hip : 0.0 , count: 503
+Val PCK @, 0.5 , pelvis : 0.0 , count: 1620
+Tra PCK @, 0.5 , pelvis : 0.0 , count: 221
+Val PCK @, 0.5 , thorax : 0.0 , count: 1691
+Tra PCK @, 0.5 , thorax : 0.0 , count: 236
+Val PCK @, 0.5 , neck : 0.0 , count: 2932
+Tra PCK @, 0.5 , neck : 0.0 , count: 298
+Val PCK @, 0.5 , head : 0.0 , count: 2931
+Tra PCK @, 0.5 , head : 0.0 , count: 297
+Val PCK @, 0.5 , wrist : 0.0 , count: 4395
+Tra PCK @, 0.5 , wrist : 0.0 , count: 490
+Val PCK @, 0.5 , elbow : 0.0 , count: 4590
+Tra PCK @, 0.5 , elbow : 0.0 , count: 511
+Val PCK @, 0.5 , shoulder : 0.0 , count: 4600
+Tra PCK @, 0.5 , shoulder : 0.0 , count: 535
+
+
+not visible :
+Val PCK @, 0.5 , total : 0.0 , count: 10243
+Tra PCK @, 0.5 , total : 0.0 , count: 564
+Val PCK @, 0.5 , ankle : 0.0 , count: 1057
+Tra PCK @, 0.5 , ankle : 0.0 , count: 52
+Val PCK @, 0.5 , knee : 0.0 , count: 1109
+Tra PCK @, 0.5 , knee : 0.0 , count: 51
+Val PCK @, 0.5 , hip : 0.0 , count: 1571
+Tra PCK @, 0.5 , hip : 0.0 , count: 84
+Val PCK @, 0.5 , pelvis : 0.0 , count: 1258
+Tra PCK @, 0.5 , pelvis : 0.0 , count: 72
+Val PCK @, 0.5 , thorax : 0.0 , count: 1241
+Tra PCK @, 0.5 , thorax : 0.0 , count: 62
+Val PCK @, 0.5 , neck : 0.0 , count: 0
+Tra PCK @, 0.5 , neck : 0.0 , count: 0
+Val PCK @, 0.5 , head : 0.0 , count: 0
+Tra PCK @, 0.5 , head : 0.0 , count: 0
+Val PCK @, 0.5 , wrist : 0.0 , count: 1442
+Tra PCK @, 0.5 , wrist : 0.0 , count: 99
+Val PCK @, 0.5 , elbow : 0.0 , count: 1277
+Tra PCK @, 0.5 , elbow : 0.0 , count: 81
+Val PCK @, 0.5 , shoulder : 0.0 , count: 1288
+Tra PCK @, 0.5 , shoulder : 0.0 , count: 63
